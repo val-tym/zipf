@@ -14,6 +14,8 @@ import os
 TARGET_TOKENS = 80000
 TOP_N = 20
 LANGUAGES = ["en", "fr", "de"]
+Q_SEARCH_MAX = 50.0
+Q_SEARCH_STEPS = 251
 
 # -------------------------------
 # 0. Папка результатів
@@ -115,10 +117,15 @@ def zipf_analysis(tokens, title, filename_prefix):
     slope, intercept = np.polyfit(log_r, log_f, 1)
     s = -slope
 
+    fitted_log_f = slope * log_r + intercept
+    ss_res = np.sum((log_f - fitted_log_f) ** 2)
+    ss_tot = np.sum((log_f - np.mean(log_f)) ** 2)
+    r2 = 1.0 - ss_res / ss_tot if ss_tot > 0 else 1.0
+
     # графік
     plt.figure()
     plt.scatter(log_r, log_f, s=5)
-    plt.plot(log_r, slope * log_r + intercept)
+    plt.plot(log_r, fitted_log_f)
     plt.xlabel("log(rank)")
     plt.ylabel("log(freq)")
     plt.title(title)
@@ -127,7 +134,53 @@ def zipf_analysis(tokens, title, filename_prefix):
     plt.savefig(plot_path)
     plt.close()
 
-    return s
+    return s, r2
+
+# -------------------------------
+# 7.1. Zipf-Mandelbrot + збереження
+# -------------------------------
+def zipf_mandelbrot_analysis(tokens, title, filename_prefix):
+    freq = Counter(tokens)
+    sorted_freq = sorted(freq.values(), reverse=True)
+    ranks = np.arange(1, len(sorted_freq) + 1, dtype=float)
+    freqs = np.array(sorted_freq, dtype=float)
+    log_f = np.log(freqs)
+
+    best = None
+    for q in np.linspace(0.0, Q_SEARCH_MAX, Q_SEARCH_STEPS):
+        x = np.log(ranks + q)
+        slope, intercept = np.polyfit(x, log_f, 1)
+        fitted = slope * x + intercept
+        sse = np.sum((log_f - fitted) ** 2)
+        if best is None or sse < best["sse"]:
+            best = {
+                "q": float(q),
+                "s": float(-slope),
+                "log_c": float(intercept),
+                "fitted": fitted,
+                "sse": float(sse),
+            }
+
+    ss_tot = np.sum((log_f - np.mean(log_f)) ** 2)
+    r2 = 1.0 - best["sse"] / ss_tot if ss_tot > 0 else 1.0
+    c = float(np.exp(best["log_c"]))
+
+    log_r = np.log(ranks)
+
+    # графік: крива в координатах log(rank)-log(freq)
+    plt.figure()
+    plt.scatter(log_r, log_f, s=5, label="data")
+    plt.plot(log_r, best["fitted"], label=f"fit q={best['q']:.2f}")
+    plt.xlabel("log(rank)")
+    plt.ylabel("log(freq)")
+    plt.title(title)
+    plt.legend()
+
+    plot_path = os.path.join(OUTPUT_DIR, f"{filename_prefix}.png")
+    plt.savefig(plot_path)
+    plt.close()
+
+    return best["s"], best["q"], c, r2
 
 # -------------------------------
 # 8. ТОП слова
@@ -150,10 +203,16 @@ if __name__ == "__main__":
         tokens = collect_tokens(lang)
 
         # RAW
-        s_raw = zipf_analysis(tokens, f"{lang} raw", f"{lang}_raw")
+        s_raw, r2_raw = zipf_analysis(tokens, f"{lang} raw (Zipf)", f"{lang}_raw_zipf")
+        s_m_raw, q_m_raw, c_m_raw, r2_m_raw = zipf_mandelbrot_analysis(
+            tokens, f"{lang} raw (Zipf-Mandelbrot)", f"{lang}_raw_zipf_mandelbrot"
+        )
         top_raw = get_top(tokens)
 
-        write_report(f"\nRAW s ≈ {s_raw:.4f}")
+        write_report(f"\nRAW Zipf: s ≈ {s_raw:.4f}, R^2 ≈ {r2_raw:.4f}")
+        write_report(
+            f"RAW Zipf-Mandelbrot: s ≈ {s_m_raw:.4f}, q ≈ {q_m_raw:.4f}, C ≈ {c_m_raw:.4f}, R^2 ≈ {r2_m_raw:.4f}"
+        )
         write_report("Top words (raw):")
         for w, c in top_raw:
             write_report(f"{w:15} {c}")
@@ -161,10 +220,16 @@ if __name__ == "__main__":
         # LEMMA
         lemmas = lemmatize(tokens, lang)
 
-        s_lemma = zipf_analysis(lemmas, f"{lang} lemma", f"{lang}_lemma")
+        s_lemma, r2_lemma = zipf_analysis(lemmas, f"{lang} lemma (Zipf)", f"{lang}_lemma_zipf")
+        s_m_lemma, q_m_lemma, c_m_lemma, r2_m_lemma = zipf_mandelbrot_analysis(
+            lemmas, f"{lang} lemma (Zipf-Mandelbrot)", f"{lang}_lemma_zipf_mandelbrot"
+        )
         top_lemma = get_top(lemmas)
 
-        write_report(f"\nLEMMA s ≈ {s_lemma:.4f}")
+        write_report(f"\nLEMMA Zipf: s ≈ {s_lemma:.4f}, R^2 ≈ {r2_lemma:.4f}")
+        write_report(
+            f"LEMMA Zipf-Mandelbrot: s ≈ {s_m_lemma:.4f}, q ≈ {q_m_lemma:.4f}, C ≈ {c_m_lemma:.4f}, R^2 ≈ {r2_m_lemma:.4f}"
+        )
         write_report("Top words (lemma):")
         for w, c in top_lemma:
             write_report(f"{w:15} {c}")

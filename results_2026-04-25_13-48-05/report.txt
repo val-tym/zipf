@@ -1,0 +1,153 @@
+Experiment started: 2026-04-25_13-48-05
+Target tokens: 80000
+
+
+=== LANGUAGE: en ===
+
+RAW Zipf: s ≈ 1.2010, R^2 ≈ 0.9761
+RAW Zipf-Mandelbrot: s ≈ 1.2262, q ≈ 5.8000, C ≈ 34663.3697, R^2 ≈ 0.9774
+Top words (raw):
+the             3949
+and             3040
+i               2737
+to              2284
+of              1787
+a               1569
+in              1213
+that            1150
+he              1139
+it              1074
+was             966
+me              790
+for             775
+as              756
+is              718
+my              714
+you             709
+not             691
+with            660
+his             629
+
+LEMMA Zipf: s ≈ 1.2712, R^2 ≈ 0.9772
+LEMMA Zipf-Mandelbrot: s ≈ 1.3108, q ≈ 7.8000, C ≈ 54377.6524, R^2 ≈ 0.9794
+Top words (lemma):
+the             3949
+I               3525
+be              3156
+and             3043
+to              2284
+of              1813
+a               1747
+he              1596
+in              1212
+that            1192
+have            1155
+it              1075
+for             781
+as              755
+my              727
+not             726
+you             709
+with            660
+his             629
+her             548
+
+=== LANGUAGE: fr ===
+
+RAW Zipf: s ≈ 1.0900, R^2 ≈ 0.9747
+RAW Zipf-Mandelbrot: s ≈ 1.0995, q ≈ 2.6000, C ≈ 16204.3817, R^2 ≈ 0.9751
+Top words (raw):
+de              4107
+la              2473
+l               1997
+et              1829
+le              1736
+d               1435
+il              1416
+à               1365
+les             1302
+des             1280
+une             1074
+un              1034
+est             915
+dans            842
+en              825
+que             776
+du              724
+se              631
+qui             630
+par             624
+
+LEMMA Zipf: s ≈ 1.1848, R^2 ≈ 0.9738
+LEMMA Zipf-Mandelbrot: s ≈ 1.2195, q ≈ 8.8000, C ≈ 33221.2073, R^2 ≈ 0.9752
+Top words (lemma):
+le              9380
+de              6845
+un              2815
+lui             2016
+à               1966
+être            1963
+et              1828
+que             1279
+son             1160
+avoir           1124
+ce              960
+dans            841
+en              825
+soi             638
+qui             629
+par             623
+femme           464
+sexuel          457
+plus            446
+faire           435
+
+=== LANGUAGE: de ===
+
+RAW Zipf: s ≈ 1.0603, R^2 ≈ 0.9678
+RAW Zipf-Mandelbrot: s ≈ 1.0659, q ≈ 1.6000, C ≈ 12888.7581, R^2 ≈ 0.9681
+Top words (raw):
+und             2810
+sie             2135
+die             1832
+er              1660
+zu              1176
+der             1142
+sich            1035
+es              1015
+peredonoff      1009
+ich             1005
+nicht           962
+in              889
+den             799
+das             765
+sagte           757
+ein             710
+mit             706
+auf             619
+war             589
+so              584
+
+LEMMA Zipf: s ≈ 1.1681, R^2 ≈ 0.9755
+LEMMA Zipf-Mandelbrot: s ≈ 1.1834, q ≈ 3.4000, C ≈ 25251.8443, R^2 ≈ 0.9761
+Top words (lemma):
+der             5823
+und             2808
+sein            2553
+er              2516
+sie             2290
+ein             1729
+ich             1441
+zu              1414
+in              1241
+haben           1167
+sich            1034
+es              1015
+peredonofen     1009
+nicht           962
+sagen           924
+werden          868
+mit             706
+ihr             677
+an              624
+auf             618
