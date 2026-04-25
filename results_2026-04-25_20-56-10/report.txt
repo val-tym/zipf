@@ -1,0 +1,1040 @@
+Experiment started: 2026-04-25_20-56-10
+Target tokens: 200000
+
+Language availability check:
+en: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+en: Stanza=OK (Stanza tokenize+lemma available)
+be: Gutenberg=SKIP (No text/plain books on first Gutendex page)
+be: Stanza=OK (Stanza tokenize+lemma available)
+uk: Gutenberg=SKIP (No text/plain books on first Gutendex page)
+uk: Stanza=OK (Stanza tokenize+lemma available)
+bg: Gutenberg=OK (6 books with text/plain on first Gutendex page)
+bg: Stanza=OK (Stanza tokenize+lemma available)
+fi: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+fi: Stanza=OK (Stanza tokenize+lemma available)
+nl: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+nl: Stanza=OK (Stanza tokenize+lemma available)
+cs: Gutenberg=OK (12 books with text/plain on first Gutendex page)
+cs: Stanza=OK (Stanza tokenize+lemma available)
+fr: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+fr: Stanza=OK (Stanza tokenize+lemma available)
+pl: Gutenberg=OK (31 books with text/plain on first Gutendex page)
+pl: Stanza=OK (Stanza tokenize+lemma available)
+da: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+da: Stanza=OK (Stanza tokenize+lemma available)
+hr: Gutenberg=SKIP (No text/plain books on first Gutendex page)
+hr: Stanza=OK (Stanza tokenize+lemma available)
+pt: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+pt: Stanza=OK (Stanza tokenize+lemma available)
+de: Gutenberg=OK (31 books with text/plain on first Gutendex page)
+de: Stanza=OK (Stanza tokenize+lemma available)
+hu: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+hu: Stanza=OK (Stanza tokenize+lemma available)
+ro: Gutenberg=OK (5 books with text/plain on first Gutendex page)
+ro: Stanza=OK (Stanza tokenize+lemma available)
+el: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+el: Stanza=OK (Stanza tokenize+lemma available)
+it: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+it: Stanza=OK (Stanza tokenize+lemma available)
+sk: Gutenberg=SKIP (No text/plain books on first Gutendex page)
+sk: Stanza=OK (Stanza tokenize+lemma available)
+es: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+es: Stanza=OK (Stanza tokenize+lemma available)
+lt: Gutenberg=OK (1 books with text/plain on first Gutendex page)
+lt: Stanza=OK (Stanza tokenize+lemma available)
+sl: Gutenberg=OK (5 books with text/plain on first Gutendex page)
+sl: Stanza=OK (Stanza tokenize+lemma available)
+et: Gutenberg=OK (1 books with text/plain on first Gutendex page)
+et: Stanza=OK (Stanza tokenize+lemma available)
+lv: Gutenberg=SKIP (No text/plain books on first Gutendex page)
+lv: Stanza=OK (Stanza tokenize+lemma available)
+sv: Gutenberg=OK (32 books with text/plain on first Gutendex page)
+sv: Stanza=OK (Stanza tokenize+lemma available)
+
+=== LANGUAGE: en ===
+
+RAW Zipf: s ≈ 1.2581, R^2 ≈ 0.9810
+RAW Zipf-Mandelbrot: s ≈ 1.2964, q ≈ 16.2663, C ≈ 149948.4974, R^2 ≈ 0.9831
+RAW analyzed: tokens = 200000, unique words = 12061
+Top words (raw):
+the             10282
+and             5434
+to              5174
+i               4908
+of              4749
+a               4414
+that            3094
+in              3025
+it              2993
+he              2944
+you             2858
+was             2704
+is              1897
+his             1892
+had             1654
+she             1646
+with            1479
+have            1463
+as              1437
+not             1382
+
+LEMMA Zipf: s ≈ 1.3306, R^2 ≈ 0.9802
+LEMMA Zipf-Mandelbrot: s ≈ 1.3917, q ≈ 22.6226, C ≈ 264069.0856, R^2 ≈ 0.9835
+LEMMA analyzed: tokens = 199049, unique words = 9663
+Top words (lemma):
+the             10287
+be              8115
+I               5954
+and             5438
+to              5175
+a               4953
+of              4795
+he              3797
+have            3726
+that            3252
+in              3023
+it              2993
+you             2858
+his             1892
+she             1646
+with            1479
+not             1475
+as              1438
+my              1403
+say             1400
+
+=== LANGUAGE: bg ===
+
+RAW Zipf: s ≈ 0.9867, R^2 ≈ 0.9681
+RAW Zipf-Mandelbrot: s ≈ 0.9887, q ≈ 0.7007, C ≈ 20164.3156, R^2 ≈ 0.9681
+RAW analyzed: tokens = 200000, unique words = 12671
+Top words (raw):
+и               6893
+да              6341
+се              5570
+не              5086
+на              4085
+е               3726
+си              2801
+в               2735
+ще              2453
+с               2231
+ти              2056
+от              1898
+за              1806
+че              1799
+а               1686
+по              1425
+ли              1330
+го              1260
+емо             1243
+какво           1223
+
+LEMMA Zipf: s ≈ 1.0547, R^2 ≈ 0.9715
+LEMMA Zipf-Mandelbrot: s ≈ 1.0564, q ≈ 0.4004, C ≈ 26477.0250, R^2 ≈ 0.9716
+LEMMA analyzed: tokens = 192009, unique words = 9152
+Top words (lemma):
+аз              13329
+съм             7492
+и               6889
+да              6340
+се              5570
+не              5085
+на              4082
+свой            3007
+в               2731
+ще              2453
+с               2229
+този            1939
+от              1901
+за              1806
+че              1797
+а               1689
+какъв           1450
+мой             1428
+по              1424
+ли              1329
+
+=== LANGUAGE: fi ===
+
+RAW Zipf: s ≈ 0.8838, R^2 ≈ 0.9665
+RAW Zipf-Mandelbrot: s ≈ 0.8870, q ≈ 4.0040, C ≈ 10284.6760, R^2 ≈ 0.9667
+RAW analyzed: tokens = 200000, unique words = 44568
+Top words (raw):
+ja              3785
+on              3232
+ei              1955
+hän             1807
+oli             1493
+kun             1407
+se              1264
+niin            990
+nyt             899
+että            737
+kuin            728
+sen             665
+en              632
+joka            615
+jo              613
+vaan            608
+vielä           603
+itse            581
+siitä           562
+hänen           552
+
+LEMMA Zipf: s ≈ 1.0699, R^2 ≈ 0.9771
+LEMMA Zipf-Mandelbrot: s ≈ 1.0914, q ≈ 18.0681, C ≈ 45523.0685, R^2 ≈ 0.9783
+LEMMA analyzed: tokens = 191937, unique words = 23600
+Top words (lemma):
+olla            7677
+ei              4409
+se              4131
+ja              3783
+hän             3231
+minä            1957
+joka            1521
+kun             1488
+sinä            1352
+tämä            1163
+että            1097
+tulla           1005
+niin            999
+saada           956
+mies            951
+jos             942
+nyt             923
+kaikki          808
+sana            805
+sanoa           800
+
+=== LANGUAGE: nl ===
+
+RAW Zipf: s ≈ 1.0344, R^2 ≈ 0.9672
+RAW Zipf-Mandelbrot: s ≈ 1.0362, q ≈ 1.0511, C ≈ 24918.1924, R^2 ≈ 0.9672
+RAW analyzed: tokens = 200000, unique words = 24084
+Top words (raw):
+de              10667
+het             6240
+van             5586
+en              5552
+een             3671
+in              3649
+den             2505
+te              1987
+zij             1859
+die             1833
+is              1759
+dat             1752
+zijn            1728
+hij             1540
+met             1421
+niet            1419
+p               1363
+der             1319
+op              1297
+haar            1291
+
+LEMMA Zipf: s ≈ 1.1023, R^2 ≈ 0.9704
+LEMMA Zipf-Mandelbrot: s ≈ 1.1069, q ≈ 2.1522, C ≈ 37850.3475, R^2 ≈ 0.9706
+LEMMA analyzed: tokens = 195626, unique words = 18675
+Top words (lemma):
+de              12357
+het             6240
+van             5583
+en              5550
+zijn            5390
+een             3787
+in              3646
+den             2501
+te              2200
+die             2057
+zij             1858
+dat             1751
+hebben          1690
+haar            1556
+hij             1538
+met             1420
+niet            1419
+p               1360
+op              1297
+als             1225
+
+=== LANGUAGE: cs ===
+
+RAW Zipf: s ≈ 0.9367, R^2 ≈ 0.9648
+RAW Zipf-Mandelbrot: s ≈ 0.9369, q ≈ 0.1001, C ≈ 12824.2667, R^2 ≈ 0.9648
+RAW analyzed: tokens = 200000, unique words = 33609
+Top words (raw):
+se              7294
+a               6951
+na              3450
+v               2671
+že              2436
+to              2323
+do              1673
+s               1579
+je              1568
+ale             1502
+jsem            1382
+si              1320
+za              1274
+k               1136
+z               1108
+i               1028
+byl             1024
+by              992
+co              923
+jako            920
+
+LEMMA Zipf: s ≈ 1.0192, R^2 ≈ 0.9634
+LEMMA Zipf-Mandelbrot: s ≈ 1.0194, q ≈ 0.1001, C ≈ 20596.6629, R^2 ≈ 0.9634
+LEMMA analyzed: tokens = 200745, unique words = 24128
+Top words (lemma):
+být             10076
+se              9069
+a               6954
+ten             4337
+on              4121
+na              3447
+v               3153
+že              2435
+já              1753
+do              1673
+s               1576
+ale             1503
+všechen         1441
+k               1412
+z               1372
+za              1272
+svůj            1237
+mít             1230
+co              1067
+i               1035
+
+=== LANGUAGE: fr ===
+
+RAW Zipf: s ≈ 1.1835, R^2 ≈ 0.9791
+RAW Zipf-Mandelbrot: s ≈ 1.2084, q ≈ 12.3624, C ≈ 86878.5436, R^2 ≈ 0.9804
+RAW analyzed: tokens = 200000, unique words = 14884
+Top words (raw):
+de              8805
+la              6103
+le              4117
+et              3992
+les             3652
+à               3552
+l               3437
+il              3413
+d               2871
+un              2621
+des             2548
+une             2396
+elle            2280
+que             2229
+en              1848
+qu              1841
+qui             1803
+se              1609
+s               1607
+dans            1606
+
+LEMMA Zipf: s ≈ 1.2770, R^2 ≈ 0.9787
+LEMMA Zipf-Mandelbrot: s ≈ 1.3380, q ≈ 26.6767, C ≈ 190549.0763, R^2 ≈ 0.9814
+LEMMA analyzed: tokens = 204174, unique words = 10702
+Top words (lemma):
+le              21549
+de              14342
+lui             6640
+un              6136
+à               5143
+être            4344
+son             4337
+que             4066
+et              3992
+avoir           3419
+ce              2324
+en              1849
+qui             1801
+soi             1622
+s               1611
+dans            1605
+ne              1588
+tout            1503
+moi             1470
+pas             1275
+
+=== LANGUAGE: pl ===
+
+RAW Zipf: s ≈ 0.8603, R^2 ≈ 0.9582
+RAW Zipf-Mandelbrot: s ≈ 0.8603, q ≈ 0.0000, C ≈ 7083.3062, R^2 ≈ 0.9582
+RAW analyzed: tokens = 200000, unique words = 42183
+Top words (raw):
+i               6575
+w               5556
+się             4474
+na              3981
+z               3231
+nie             2636
+do              1816
+a               1784
+to              1607
+jak             1263
+o               1213
+że              1205
+jest            1062
+po              895
+za              839
+tak             802
+co              744
+od              680
+już             600
+s               517
+
+LEMMA Zipf: s ≈ 0.9518, R^2 ≈ 0.9592
+LEMMA Zipf-Mandelbrot: s ≈ 0.9518, q ≈ 0.0000, C ≈ 13054.6940, R^2 ≈ 0.9592
+LEMMA analyzed: tokens = 200607, unique words = 30209
+Top words (lemma):
+i               6570
+w               5669
+się             4471
+być             4225
+na              3997
+on              3791
+z               3624
+nie             2634
+ten             1975
+to              1873
+do              1822
+a               1780
+który           1557
+jak             1261
+o               1211
+że              1205
+mieć            1015
+móc             950
+po              895
+ja              859
+
+=== LANGUAGE: da ===
+
+RAW Zipf: s ≈ 1.0906, R^2 ≈ 0.9734
+RAW Zipf-Mandelbrot: s ≈ 1.0951, q ≈ 2.2523, C ≈ 36604.1526, R^2 ≈ 0.9735
+RAW analyzed: tokens = 200000, unique words = 19781
+Top words (raw):
+og              7845
+i               4854
+at              4146
+det             3736
+til             3035
+han             2959
+en              2908
+den             2654
+var             2638
+jeg             2439
+de              2417
+med             2226
+paa             2156
+der             2033
+af              2027
+for             1908
+saa             1904
+som             1896
+ikke            1808
+sig             1801
+
+LEMMA Zipf: s ≈ 1.1565, R^2 ≈ 0.9755
+LEMMA Zipf-Mandelbrot: s ≈ 1.1639, q ≈ 3.0030, C ≈ 54227.1723, R^2 ≈ 0.9758
+LEMMA analyzed: tokens = 199835, unique words = 15689
+Top words (lemma):
+og              7841
+den             5069
+være            4895
+i               4854
+en              4485
+at              4146
+han             4005
+det             3736
+jeg             3423
+til             3036
+have            2571
+med             2226
+paa             2153
+der             2095
+af              2027
+for             1916
+saa             1905
+som             1894
+ikke            1805
+sig             1801
+
+=== LANGUAGE: pt ===
+
+RAW Zipf: s ≈ 1.0804, R^2 ≈ 0.9735
+RAW Zipf-Mandelbrot: s ≈ 1.0862, q ≈ 3.2032, C ≈ 36414.7078, R^2 ≈ 0.9737
+RAW analyzed: tokens = 200000, unique words = 21070
+Top words (raw):
+que             7669
+a               7227
+e               6832
+o               5721
+de              5315
+não             3153
+se              2906
+me              2220
+em              2172
+os              1979
+do              1825
+as              1676
+da              1618
+com             1523
+um              1482
+por             1416
+mas             1219
+mais            1193
+para            1102
+no              1053
+
+LEMMA Zipf: s ≈ 1.1176, R^2 ≈ 0.9749
+LEMMA Zipf-Mandelbrot: s ≈ 1.1205, q ≈ 1.1512, C ≈ 39300.2684, R^2 ≈ 0.9750
+LEMMA analyzed: tokens = 209569, unique words = 16815
+Top words (lemma):
+o               26465
+de              10520
+que             7993
+e               6869
+em              5148
+ser             3825
+eu              3426
+não             3152
+se              2900
+um              2403
+por             1768
+com             1556
+meu             1467
+seu             1230
+mas             1218
+mais            1193
+este            1160
+para            1101
+ter             1097
+como            1035
+
+=== LANGUAGE: de ===
+
+RAW Zipf: s ≈ 1.1172, R^2 ≈ 0.9698
+RAW Zipf-Mandelbrot: s ≈ 1.1221, q ≈ 2.2022, C ≈ 42077.6084, R^2 ≈ 0.9700
+RAW analyzed: tokens = 200000, unique words = 18285
+Top words (raw):
+und             6447
+sie             5924
+er              4723
+die             4226
+zu              2789
+der             2721
+sich            2719
+nicht           2456
+es              2444
+in              2336
+ich             2332
+das             2279
+mit             1819
+den             1774
+ein             1697
+war             1611
+auf             1536
+so              1489
+sagte           1464
+daß             1367
+
+LEMMA Zipf: s ≈ 1.2311, R^2 ≈ 0.9771
+LEMMA Zipf-Mandelbrot: s ≈ 1.2454, q ≈ 4.9550, C ≈ 87650.4397, R^2 ≈ 0.9778
+LEMMA analyzed: tokens = 201574, unique words = 12305
+Top words (lemma):
+der             14145
+er              6995
+sein            6488
+und             6441
+sie             6245
+ein             4425
+ich             3335
+zu              3294
+in              3189
+haben           2886
+sich            2717
+nicht           2456
+es              2442
+ihr             2209
+sagen           1875
+mit             1820
+werden          1741
+auf             1535
+an              1501
+so              1485
+
+=== LANGUAGE: hu ===
+
+RAW Zipf: s ≈ 0.7751, R^2 ≈ 0.9179
+RAW Zipf-Mandelbrot: s ≈ 0.7751, q ≈ 0.0000, C ≈ 2894.5122, R^2 ≈ 0.9179
+RAW analyzed: tokens = 200000, unique words = 46110
+Top words (raw):
+a               18176
+az              6159
+hogy            3480
+nem             2907
+és              2888
+s               2485
+egy             2255
+is              1883
+volt            1311
+azt             1258
+de              1201
+meg             1058
+csak            953
+ez              921
+még             873
+mint            871
+ha              820
+már             797
+van             764
+minden          760
+
+LEMMA Zipf: s ≈ 0.8390, R^2 ≈ 0.9348
+LEMMA Zipf-Mandelbrot: s ≈ 0.8390, q ≈ 0.0000, C ≈ 4850.9623, R^2 ≈ 0.9348
+LEMMA analyzed: tokens = 199589, unique words = 37757
+Top words (lemma):
+a               18149
+az              8902
+hogy            3499
+van             3085
+nem             2909
+és              2887
+s               2479
+egy             2251
+ez              1964
+is              1884
+de              1198
+mi              1107
+ő               1096
+lesz            1064
+meg             1054
+csak            968
+ki              898
+minden          890
+maga            884
+még             872
+
+=== LANGUAGE: ro ===
+
+RAW Zipf: s ≈ 1.2058, R^2 ≈ 0.9758
+RAW Zipf-Mandelbrot: s ≈ 1.2751, q ≈ 36.7367, C ≈ 168836.8184, R^2 ≈ 0.9798
+RAW analyzed: tokens = 200000, unique words = 11643
+Top words (raw):
+de              9436
+in              4680
+a               4185
+si              3192
+se              2781
+cu              2759
+o               2692
+este            2645
+nu              2561
+ca              2474
+sa              2431
+un              2420
+care            2085
+mai             1990
+modele          1906
+la              1882
+model           1766
+pe              1718
+și              1705
+din             1429
+
+LEMMA Zipf: s ≈ 1.3141, R^2 ≈ 0.9766
+LEMMA Zipf-Mandelbrot: s ≈ 1.4251, q ≈ 43.4935, C ≈ 405866.9552, R^2 ≈ 0.9828
+LEMMA analyzed: tokens = 199711, unique words = 8053
+Top words (lemma):
+de              9429
+avea            7215
+fi              6478
+un              6153
+model           5201
+in              4677
+si              3184
+sine            2862
+cu              2754
+nu              2559
+său             2500
+ca              2466
+care            2094
+mai             1989
+putea           1962
+la              1879
+el              1718
+pe              1716
+și              1705
+vrea            1581
+
+=== LANGUAGE: el ===
+
+RAW Zipf: s ≈ 0.9375, R^2 ≈ 0.9575
+RAW Zipf-Mandelbrot: s ≈ 0.9375, q ≈ 0.0000, C ≈ 11734.2124, R^2 ≈ 0.9575
+RAW analyzed: tokens = 200000, unique words = 31447
+Top words (raw):
+και             7544
+του             5357
+της             3509
+των             3163
+την             3039
+ο               2909
+εις             2768
+εν              2541
+το              2478
+to              2167
+τον             1928
+δε              1785
+η               1722
+να              1616
+οι              1293
+a               1161
+τα              1160
+αυτού           1123
+κατά            1079
+προς            1015
+
+LEMMA Zipf: s ≈ 0.9716, R^2 ≈ 0.9605
+LEMMA Zipf-Mandelbrot: s ≈ 0.9716, q ≈ 0.0000, C ≈ 14258.3770, R^2 ≈ 0.9605
+LEMMA analyzed: tokens = 199876, unique words = 26834
+Top words (lemma):
+ο               28939
+και             7546
+αυτός           2997
+εις             2768
+εν              2539
+to              2165
+δε              1782
+να              1615
+κράτος          1322
+a               1161
+τούτος          1097
+κατά            1079
+εγώ             1058
+είμαι           1026
+προς            1015
+διά             961
+από             951
+ως              948
+υπό             937
+of              905
+
+=== LANGUAGE: it ===
+
+RAW Zipf: s ≈ 1.0106, R^2 ≈ 0.9636
+RAW Zipf-Mandelbrot: s ≈ 1.0115, q ≈ 0.5506, C ≈ 20664.7816, R^2 ≈ 0.9636
+RAW analyzed: tokens = 200000, unique words = 25974
+Top words (raw):
+di              6543
+e               6461
+che             5068
+il              4052
+la              3629
+a               3016
+non             2907
+in              2681
+per             2134
+un              1778
+l               1636
+del             1576
+si              1566
+le              1550
+i               1402
+della           1328
+da              1198
+è               1123
+ma              1123
+con             1080
+
+LEMMA Zipf: s ≈ 1.0716, R^2 ≈ 0.9638
+LEMMA Zipf-Mandelbrot: s ≈ 1.0716, q ≈ 0.0000, C ≈ 27450.5988, R^2 ≈ 0.9638
+LEMMA analyzed: tokens = 212847, unique words = 19542
+Top words (lemma):
+il              21712
+di              11144
+e               7584
+a               6318
+essere          5165
+che             5063
+in              4526
+lo              3882
+uno             2955
+non             2904
+avere           2662
+si              2378
+da              2255
+per             2138
+suo             1512
+quello          1485
+fare            1363
+ma              1132
+questo          1089
+con             1079
+
+=== LANGUAGE: es ===
+
+RAW Zipf: s ≈ 0.9141, R^2 ≈ 0.9709
+RAW Zipf-Mandelbrot: s ≈ 0.9145, q ≈ 0.2002, C ≈ 12415.7653, R^2 ≈ 0.9709
+RAW analyzed: tokens = 200000, unique words = 17962
+Top words (raw):
+de              6094
+the             5029
+to              4808
+of              3505
+que             3293
+la              3288
+a               3200
+y               3124
+en              2649
+á               2630
+el              2569
+in              1986
+and             1961
+los             1686
+se              1336
+las             1282
+un              1242
+del             1084
+no              1080
+con             1028
+
+LEMMA Zipf: s ≈ 0.9882, R^2 ≈ 0.9746
+LEMMA Zipf-Mandelbrot: s ≈ 0.9935, q ≈ 2.2523, C ≈ 22492.9938, R^2 ≈ 0.9748
+LEMMA analyzed: tokens = 204019, unique words = 14134
+Top words (lemma):
+el              11020
+de              7181
+the             5018
+to              4798
+a               4418
+él              4012
+of              3498
+que             3293
+y               3127
+en              2647
+á               2627
+uno             2497
+in              1983
+and             1958
+su              1786
+por             1351
+haber           1294
+no              1078
+con             1026
+yo              913
+
+=== LANGUAGE: lt ===
+
+RAW Zipf: s ≈ 0.9703, R^2 ≈ 0.9672
+RAW Zipf-Mandelbrot: s ≈ 1.0044, q ≈ 1.6517, C ≈ 34448.0516, R^2 ≈ 0.9691
+RAW analyzed: tokens = 200000, unique words = 742
+Top words (raw):
+the             11760
+of              7535
+gutenberg       5795
+project         5192
+to              5119
+or              4817
+and             4398
+you             4349
+a               3796
+in              3741
+tm              3439
+with            2959
+this            2785
+work            2716
+any             2290
+is              1989
+works           1936
+electronic      1632
+for             1626
+foundation      1504
+
+LEMMA Zipf: s ≈ 1.0074, R^2 ≈ 0.8732
+LEMMA Zipf-Mandelbrot: s ≈ 1.0617, q ≈ 2.6527, C ≈ 43131.5447, R^2 ≈ 0.8762
+LEMMA analyzed: tokens = 187258, unique words = 711
+Top words (lemma):
+the             11734
+of              7525
+gutenberg       5782
+project         5177
+tas             5112
+or              4793
+and             4378
+you             4347
+in              3730
+tm              3437
+with            2953
+this            2778
+work            2704
+any             2275
+is              1984
+works           1934
+electronis      1628
+for             1622
+foundatis       1497
+are             1325
+
+=== LANGUAGE: sl ===
+
+RAW Zipf: s ≈ 1.0015, R^2 ≈ 0.9758
+RAW Zipf-Mandelbrot: s ≈ 1.0029, q ≈ 0.8008, C ≈ 20416.9563, R^2 ≈ 0.9758
+RAW analyzed: tokens = 200000, unique words = 25700
+Top words (raw):
+je              9017
+in              6650
+se              4874
+da              4317
+v               3258
+na              2387
+ne              2333
+so              2096
+bi              1879
+pa              1829
+ni              1604
+sem             1587
+ali             1526
+za              1521
+po              1512
+bil             1273
+ki              1244
+to              1198
+tudi            1188
+ga              1171
+
+LEMMA Zipf: s ≈ 1.0965, R^2 ≈ 0.9793
+LEMMA Zipf-Mandelbrot: s ≈ 1.0999, q ≈ 1.4515, C ≈ 35233.8011, R^2 ≈ 0.9794
+LEMMA analyzed: tokens = 199747, unique words = 17508
+Top words (lemma):
+biti            21655
+in              6645
+se              6021
+on              4388
+da              4305
+v               3253
+jaz             3115
+ta              3073
+na              2378
+ne              2328
+pa              1828
+z               1745
+ti              1613
+ali             1532
+za              1522
+po              1510
+ves             1441
+svoj            1268
+ki              1243
+tudi            1190
+
+=== LANGUAGE: et ===
+
+RAW Zipf: s ≈ 0.8731, R^2 ≈ 0.9622
+RAW Zipf-Mandelbrot: s ≈ 0.8784, q ≈ 0.7508, C ≈ 14474.6705, R^2 ≈ 0.9623
+RAW analyzed: tokens = 200000, unique words = 3222
+Top words (raw):
+ja              6752
+ei              5731
+margus          3157
+on              2925
+kui             2863
+sa              2199
+tiina           2173
+mis             2058
+see             1960
+ka              1837
+ära             1686
+siis            1666
+mari            1616
+wanaema         1585
+mina            1484
+ma              1423
+ole             1344
+ta              1308
+nagu            1294
+et              1214
+
+LEMMA Zipf: s ≈ 1.0794, R^2 ≈ 0.9398
+LEMMA Zipf-Mandelbrot: s ≈ 1.1216, q ≈ 4.0541, C ≈ 52620.7468, R^2 ≈ 0.9424
+LEMMA analyzed: tokens = 187747, unique words = 1870
+Top words (lemma):
+olema           7801
+ja              6750
+mina            5934
+ei              5727
+sina            5629
+see             4356
+tema            3896
+margus          3152
+kui             2861
+tiina           2301
+mis             2273
+tulema          1885
+ka              1832
+mari            1742
+ära             1683
+siis            1664
+wanaema         1583
+minema          1467
+nagu            1292
+ise             1217
+
+=== LANGUAGE: sv ===
+
+RAW Zipf: s ≈ 1.0162, R^2 ≈ 0.9692
+RAW Zipf-Mandelbrot: s ≈ 1.0173, q ≈ 0.6507, C ≈ 21408.0189, R^2 ≈ 0.9692
+RAW analyzed: tokens = 200000, unique words = 24797
+Top words (raw):
+och             8194
+i               3712
+att             3657
+en              3343
+det             3176
+han             3088
+som             2932
+på              2629
+med             2318
+jag             2316
+de              2275
+den             2139
+till            1702
+var             1559
+hon             1520
+är              1510
+sig             1496
+du              1492
+men             1455
+för             1440
+
+LEMMA Zipf: s ≈ 1.0727, R^2 ≈ 0.9742
+LEMMA Zipf-Mandelbrot: s ≈ 1.0749, q ≈ 1.0511, C ≈ 30171.3183, R^2 ≈ 0.9742
+LEMMA analyzed: tokens = 199024, unique words = 19703
+Top words (lemma):
+och             8189
+den             5417
+han             4646
+en              4625
+jag             4041
+vara            3951
+i               3705
+att             3655
+de              2937
+som             2931
+sig             2869
+du              2752
+på              2629
+hon             2443
+med             2316
+ha              2153
+till            1699
+men             1463
+för             1440
+så              1220
