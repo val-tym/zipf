@@ -1,0 +1,11 @@
+[project]
+name = "manimation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "manim>=0.20.1",
+    "manim-voiceover[gtts]>=0.3.7",
+    "setuptools>=81.0.0",
+]

@@ -10,3 +10,8 @@ dependencies = [
     "requests>=2.33.1",
     "stanza>=1.11.1",
 ]
+
+[tool.uv.workspace]
+members = [
+    "manimation",
+]
