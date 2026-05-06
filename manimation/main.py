@@ -231,4 +231,53 @@ not             1382\n\
         self.play(FadeOut(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                           en_lemma_zipf, en_lemma_zipf_mandelbrot))
 
+        # ================================================
+
+        zipf_title = Text("s (закон Ципфа)", font_size=14).shift(LEFT * 3.2 + UP * 3.7)
+        mand_s_title = Text("s (закон Ципфа-Мандельброта)", font_size=14).shift(RIGHT * 0.9 + UP * 3.7)
+        mand_q_title = Text("q (закон Ципфа-Мандельброта)", font_size=14).shift(RIGHT * 5 + UP * 3.7)
+
+        raw_s = ImageMobject("raw_s.png").shift(3.2 * LEFT + UP * 1.7).scale(0.6)
+        raw_mand_s = ImageMobject("raw_mand_s.png").shift(0.9 * RIGHT + UP * 1.7).scale(0.6)
+        raw_mand_q = ImageMobject("raw_mand_q.png").shift(5 * RIGHT + UP * 1.7).scale(0.6)
+
+        lemma_s = ImageMobject("lemma_s.png").shift(3.2 * LEFT + DOWN * 2.1).scale(0.6)
+        lemma_mand_s = ImageMobject("lemma_mand_s.png").shift(0.9 * RIGHT + DOWN * 2.1).scale(0.6)
+        lemma_mand_q = ImageMobject("lemma_mand_q.png").shift(5 * RIGHT + DOWN * 2.1).scale(0.6)
+
+        raw = Text("Без лематизації", font_size=14).shift(UP * 1.7+LEFT*6)
+        lemma = Text("З лематизацією", font_size=14).shift(DOWN * 2.1+LEFT*6)
+
+        with self.voiceover(
+                text="Нанесемо на карту значення апроксимованих коефіцієнтів: s для закону Ципфа, s та q для закону Ципфа-Мандельброта."
+        ) as tracker:
+            self.play(FadeIn(zipf_title, mand_s_title, mand_q_title, raw_s, raw_mand_s, raw_mand_q, lemma_s, lemma_mand_s, lemma_mand_q, raw, lemma))
+
+        self.play(FadeOut(zipf_title, mand_s_title, mand_q_title, raw_s, raw_mand_s, raw_mand_q, lemma_s, lemma_mand_s, lemma_mand_q, raw, lemma))
+
+        # ================================================
+
+        en_zipf_title = Text("Закон Ципфа", font_size=24).shift(LEFT * 2 + UP * 3.7)
+        en_zipf_mandelbrot_title = Text("Закон Ципфа-Мандельброта", font_size=24).shift(RIGHT * 4 + UP * 3.7)
+
+        en_raw_zipf = ImageMobject("raw_det.png").shift(2 * LEFT + UP * 1.7).scale(0.7)
+        en_raw_zipf_mandelbrot = ImageMobject("raw_mand_det.png").shift(
+            4 * RIGHT + UP * 1.7).scale(0.7)
+
+        en_lemma_zipf = ImageMobject("lemma_det.png").shift(2 * LEFT + DOWN * 2.1).scale(0.7)
+        en_lemma_zipf_mandelbrot = ImageMobject("lemma_mand_det.png").shift(
+            4 * RIGHT + DOWN * 2.1).scale(0.7)
+
+        raw = Text("Без лематизації", font_size=20).shift(UP * 1.7).to_edge(LEFT)
+        lemma = Text("З лематизацією", font_size=20).shift(DOWN * 2.1).to_edge(LEFT)
+
+        with self.voiceover(
+                text="Тепер порівняємо коефіцієнти детермінації."
+        ) as tracker:
+            self.play(FadeIn(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
+                             en_lemma_zipf, en_lemma_zipf_mandelbrot))
+
+        self.play(FadeOut(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
+                          en_lemma_zipf, en_lemma_zipf_mandelbrot))
+
         self.wait()
