@@ -30,6 +30,7 @@ class ZipfPresentation(VoiceoverScene):
         MATH_COLOR = "#deff9a"
         ACCENT_COLOR = "#11caa0"
         ACCENT_COLOR_2 = "#22C55E"
+        YELLOW_ACCENT = "#deff9a"
 
         self.camera.background_color = BG_COLOR
 
@@ -58,6 +59,76 @@ class ZipfPresentation(VoiceoverScene):
             rect.move_to(img_mobject)
             # ImageMobject is not a VMobject, so we must use Group (not VGroup).
             return Group(rect, img_mobject)
+
+        title = Text("Закон Ципфа:", color=ACCENT_COLOR, font_size=72)
+        subtitle = Text("Фундаментальний закон статистики", font_size=36).next_to(title, DOWN)
+
+        self.play(Write(title))
+        self.play(FadeIn(subtitle, shift=UP))
+        self.wait(2)
+        self.play(FadeOut(title), FadeOut(subtitle))
+
+        heading = Text("У чому суть?", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Write(heading))
+
+        desc = Text(
+            "Частота появи слова у тексті\nобернено пропорційна його рангу.",
+            font_size=32, line_spacing=1.5
+        )
+        self.play(FadeIn(desc))
+        self.wait(2)
+
+        example = MarkupText(
+            '1-ше місце: <span color="#deff9a">100%</span>\n'
+            '2-ге місце: <span color="#deff9a">50%</span>\n'
+            '3-тє місце: <span color="#deff9a">33%</span>',
+            font_size=36, line_spacing=1.8
+        ).shift(DOWN * 0.5)
+
+        self.play(desc.animate.shift(UP * 1.5).scale(0.8))
+        self.play(Write(example))
+        self.wait(3)
+        self.play(FadeOut(heading), FadeOut(desc), FadeOut(example))
+
+        title_formula = Text("Математична модель", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Write(title_formula))
+
+        formula = MarkupText(
+            "<i>f</i>(<i>r</i>) = C / <i>r</i><sup><i>s</i></sup>",
+            font_size=80, color=YELLOW_ACCENT, font="Times New Roman"
+        )
+
+        formula_labels = VGroup(
+            Text("f — частота слова", font_size=24),
+            Text("r — ранг (місце у списку за частотністю)", font_size=24),
+            Text("s — показник степеня (зазвичай ≈ 1)", font_size=24)
+        ).arrange(DOWN, aligned_edge=LEFT).shift(DOWN * 2)
+
+        self.play(Write(formula))
+        self.play(FadeIn(formula_labels))
+        self.wait(4)
+        self.play(FadeOut(title_formula), FadeOut(formula), FadeOut(formula_labels))
+
+        title_why = Text("Навіщо це досліджувати?", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Write(title_why))
+
+        reasons = VGroup(
+            Text("• Оптимізація пошукових систем та стиснення даних", font_size=28),
+            Text("• Розуміння еволюції людської мови", font_size=28),
+            Text("• Аналіз складних самоорганізованих систем", font_size=28)
+        ).arrange(DOWN, aligned_edge=LEFT, buff=0.6)
+
+        self.play(FadeIn(reasons, shift=RIGHT))
+        self.wait(4)
+        self.play(FadeOut(title_why), FadeOut(reasons))
+
+        final_text = Text(
+            "Закон Ципфа працює всюди:\nвід частоти слів до населення міст.",
+            font_size=36, color=YELLOW_ACCENT, line_spacing=1.5
+        )
+        self.play(Write(final_text))
+        self.wait(3)
+        self.play(FadeOut(final_text))
 
         # =========================
         # Заголовок
