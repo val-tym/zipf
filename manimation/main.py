@@ -26,8 +26,9 @@ class ZipfPresentation(VoiceoverScene):
             return os.path.join(RESULTS_DIR, path)
 
         BG_COLOR = "#0B1020"
-        TEXT_COLOR = "#EAF2FF"
-        ACCENT_COLOR = "#7C5CFF"
+        TEXT_COLOR = WHITE
+        MATH_COLOR = "#deff9a"
+        ACCENT_COLOR = "#11caa0"
         ACCENT_COLOR_2 = "#22C55E"
 
         self.camera.background_color = BG_COLOR
@@ -61,7 +62,7 @@ class ZipfPresentation(VoiceoverScene):
         # =========================
         # Заголовок
         # =========================
-        title = styled_text("Закон Ципфа для різних мов", font_size=64).shift(UP * 3)
+        title = styled_text("Закон Ципфа для різних мов", font_size=64, color=ACCENT_COLOR).shift(UP * 3)
 
         with self.voiceover(
             text="Для прикладу візьмемо англійську мову."
@@ -330,5 +331,97 @@ not             1382\n\
 
         self.play(FadeOut(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                           en_lemma_zipf, en_lemma_zipf_mandelbrot))
+
+
+        title_1 = Text("Математичне обґрунтування похибки", color=ACCENT_COLOR).to_edge(UP)
+        self.play(FadeIn(title_1))
+
+        statement = Text(
+            "Відхилення від теоретичного розподілу Ципфа\nє наслідком алгоритмічної похибки NLP-моделей.",
+            font_size=32,
+            line_spacing=1.5,
+            color=TEXT_COLOR
+        )
+        self.play(Write(statement), run_time=2)
+        self.wait(3)
+        self.play(FadeOut(statement))
+
+        title_2 = Text("Імовірнісна модель ідентифікації", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Transform(title_1, title_2))
+
+        formula_group = VGroup()
+        formula_intro = Text("Ймовірність коректної лематизації:", font_size=30).set_opacity(0.8)
+
+        formula = MarkupText("<i>P</i><sub>acc</sub> = <i>p</i><sup>D</sup>", font_size=72, color=MATH_COLOR,
+                             font="Times New Roman")
+
+        definitions = VGroup(
+            Text("p — ймовірність розпізнавання однієї ознаки", font_size=24),
+            Text("D — вимірність вектора морфологічних ознак", font_size=24)
+        ).arrange(DOWN, aligned_edge=LEFT).set_opacity(0.7)
+
+        formula_group.add(formula_intro, formula, definitions).arrange(DOWN, buff=0.8)
+
+        self.play(FadeIn(formula_intro))
+        self.play(Write(formula))
+        self.play(FadeIn(definitions))
+        self.wait(4)
+        self.play(FadeOut(formula_group))
+
+        title_3 = Text("Порівняльний статистичний аналіз", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Transform(title_1, title_3))
+
+        p_val = 0.95
+
+        eng_group = VGroup()
+        eng_name = Text("Аналітична мова (Англійська)", font_size=28, color=TEXT_COLOR)
+        eng_dim = Text("D = 1", font_size=24).set_opacity(0.7)
+        eng_math = MarkupText(f"<i>P</i><sub>eng</sub> = {p_val}<sup>1</sup> = 0.950", font_size=40, color=MATH_COLOR,
+                              font="Times New Roman")
+        eng_group.add(eng_name, eng_dim, eng_math).arrange(DOWN, buff=0.4).shift(LEFT * 3.5)
+
+        lit_group = VGroup()
+        lit_name = Text("Флективна мова (Литовська)", font_size=28, color=TEXT_COLOR)
+        lit_dim = Text("D = 4", font_size=24).set_opacity(0.7)
+        lit_math = MarkupText(f"<i>P</i><sub>lit</sub> = {p_val}<sup>4</sup> ≈ 0.814", font_size=40, color=MATH_COLOR,
+                              font="Times New Roman")
+        lit_group.add(lit_name, lit_dim, lit_math).arrange(DOWN, buff=0.4).shift(RIGHT * 3.5)
+
+        divider = Line(UP * 1.5, DOWN * 1.5, color=GRAY).set_opacity(0.5)
+
+        self.play(FadeIn(divider))
+        self.play(FadeIn(eng_group, shift=RIGHT * 0.5), FadeIn(lit_group, shift=LEFT * 0.5))
+        self.wait(4)
+
+        sys_error = Text(
+            "Систематична похибка класифікації: ~18.6%",
+            font_size=30,
+            color=ACCENT_COLOR
+        ).to_edge(DOWN).shift(UP * 0.5)
+        self.play(Write(sys_error))
+        self.wait(3)
+        self.play(FadeOut(eng_group), FadeOut(lit_group), FadeOut(divider), FadeOut(sys_error))
+
+        title_4 = Text("Фундаментальність закону Ципфа", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Transform(title_1, title_4))
+
+        final_conclusions = VGroup(
+            Text("1. Штучне заниження частоти високорангових лексем.", font_size=28, color=TEXT_COLOR),
+            Text("2. Гіпертрофоване збільшення дисперсії розподілу.", font_size=28, color=TEXT_COLOR),
+            Text("Закон Ципфа є інваріантним. Аномалії — артефакт інструментів.", font_size=32, color=MATH_COLOR)
+        ).arrange(DOWN, aligned_edge=LEFT, buff=0.8)
+
+        final_conclusions.move_to(ORIGIN)
+
+        for line in final_conclusions:
+            self.play(FadeIn(line, shift=UP * 0.3), run_time=1.5)
+            self.wait(1)
+
+        self.wait(3)
+
+        self.play(
+            *[FadeOut(m) for m in self.mobjects],
+            run_time=2
+        )
 
         self.wait()
