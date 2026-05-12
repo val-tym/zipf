@@ -109,6 +109,26 @@ class ZipfPresentation(VoiceoverScene):
         self.wait(4)
         self.play(FadeOut(title_formula), FadeOut(formula), FadeOut(formula_labels))
 
+        title_formula = Text("Закон Ципфа-Мандельброта", color=ACCENT_COLOR).to_edge(UP)
+        self.play(Write(title_formula))
+
+        formula = MarkupText(
+            "<i>f</i>(<i>r</i>) = C / (<i>r</i> + <i>q</i>)<sup><i>s</i></sup>",
+            font_size=80, color=YELLOW_ACCENT, font="Times New Roman"
+        )
+
+        formula_labels = VGroup(
+            Text("f — частота слова", font_size=24),
+            Text("r — ранг (місце у списку за частотністю)", font_size=24),
+            Text("s — показник степеня (зазвичай ≈ 1)", font_size=24),
+            Text("q — додатковий параметр", font_size=24)
+        ).arrange(DOWN, aligned_edge=LEFT).shift(DOWN * 2)
+
+        self.play(Write(formula))
+        self.play(FadeIn(formula_labels))
+        self.wait(4)
+        self.play(FadeOut(title_formula), FadeOut(formula), FadeOut(formula_labels))
+
         title_why = Text("Навіщо це досліджувати?", color=ACCENT_COLOR).to_edge(UP)
         self.play(Write(title_why))
 
