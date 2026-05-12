@@ -65,7 +65,7 @@ class ZipfPresentation(VoiceoverScene):
 
         self.play(Write(title))
         self.play(FadeIn(subtitle, shift=UP))
-        self.wait(2)
+        self.wait(3)
         self.play(FadeOut(title), FadeOut(subtitle))
 
         heading = Text("У чому суть?", color=ACCENT_COLOR).to_edge(UP)
@@ -87,7 +87,7 @@ class ZipfPresentation(VoiceoverScene):
 
         self.play(desc.animate.shift(UP * 1.5).scale(0.8))
         self.play(Write(example))
-        self.wait(3)
+        self.wait(2)
         self.play(FadeOut(heading), FadeOut(desc), FadeOut(example))
 
         title_formula = Text("Математична модель", color=ACCENT_COLOR).to_edge(UP)
@@ -106,7 +106,7 @@ class ZipfPresentation(VoiceoverScene):
 
         self.play(Write(formula))
         self.play(FadeIn(formula_labels))
-        self.wait(4)
+        self.wait(5)
         self.play(FadeOut(title_formula), FadeOut(formula), FadeOut(formula_labels))
 
         title_formula = Text("Закон Ципфа-Мандельброта", color=ACCENT_COLOR).to_edge(UP)
@@ -126,7 +126,7 @@ class ZipfPresentation(VoiceoverScene):
 
         self.play(Write(formula))
         self.play(FadeIn(formula_labels))
-        self.wait(4)
+        self.wait(8)
         self.play(FadeOut(title_formula), FadeOut(formula), FadeOut(formula_labels))
 
         title_why = Text("Навіщо це досліджувати?", color=ACCENT_COLOR).to_edge(UP)
@@ -139,7 +139,7 @@ class ZipfPresentation(VoiceoverScene):
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.6)
 
         self.play(FadeIn(reasons, shift=RIGHT))
-        self.wait(4)
+        self.wait(5.5)
         self.play(FadeOut(title_why), FadeOut(reasons))
 
         final_text = Text(
@@ -147,7 +147,7 @@ class ZipfPresentation(VoiceoverScene):
             font_size=36, color=YELLOW_ACCENT, line_spacing=1.5
         )
         self.play(Write(final_text))
-        self.wait(3)
+        self.wait(8)
         self.play(FadeOut(final_text))
 
         # =========================
@@ -177,19 +177,15 @@ class ZipfPresentation(VoiceoverScene):
 
         book1 = with_card(ImageMobject(asset("book.png")).shift(DOWN).scale(0.5), pad=0.10)
 
-        with self.voiceover(
-                text="Для того щоб зібрати достатню кількість тексту для аналізу візьмемо випадкуву книгу на досліджуваній мові (наприклад ангійській). Якщо вона містить достатньо тексту (у нашому випадку достатньою вважалась кількість у 200000 токенів, тобто слів), то переходимо до наступного етапу."
-        ) as tracker:
-            self.play(FadeIn(book1))
+        self.play(FadeIn(book1))
+        self.wait(13)
 
         # ================================================
 
         book2 = with_card(ImageMobject(asset("book.png")).shift(UP*1.5).scale(0.5), pad=0.10)
 
-        with self.voiceover(
-                text="Якщо ж ні, то беремо наступні випадкові книги допоки не досягнемо необхідної кількості тексту."
-        ) as tracker:
-            self.play(FadeIn(book2))
+        self.play(FadeIn(book2))
+        self.wait(3.5)
 
         self.play(FadeOut(book1, book2))
 
@@ -197,30 +193,29 @@ class ZipfPresentation(VoiceoverScene):
 
         en_top = Text("the             10282\n\
 and             5434\n\
-to              5174\n\
-i               4908\n\
-of              4749\n\
-a               4414\n\
+to                5174\n\
+i                   4908\n\
+of                4749\n\
+a                   4414\n\
 that            3094\n\
-in              3025\n\
-it              2993\n\
-he              2944\n\
-you             2858\n\
+in                3025\n\
+it                 2993\n\
+he                2944\n\
+you            2858\n\
 was             2704\n\
-is              1897\n\
+is                1897\n\
 his             1892\n\
-had             1654\n\
+had            1654\n\
 she             1646\n\
-with            1479\n\
-have            1463\n\
-as              1437\n\
-not             1382\n\
+with         1479\n\
+have          1463\n\
+as                1437\n\
+not            1382\n\
 ...", font_size=20)
 
-        with self.voiceover(
-                text="Далі впорядковуємо слова по частоті. Порядковий номер номер слова будемо називати його рангом."
-        ) as tracker:
-            self.play(Write(en_top))
+
+        self.play(Write(en_top))
+        self.wait(4)
 
         self.play(FadeOut(en_top))
 
@@ -232,10 +227,8 @@ not             1382\n\
         en_raw_zipf = with_card(ImageMobject(result("en_raw_zipf.png")).shift(4*LEFT).scale(1.3), pad=0.18)
         en_raw_zipf_mandelbrot = with_card(ImageMobject(result("en_raw_zipf_mandelbrot.png")).shift(4*RIGHT).scale(1.3), pad=0.18)
 
-        with self.voiceover(
-                text="Будуємо графік залежності частоти слова від рангу у логарифмічному масштабі. Апроксимуємо за законом Ципфа та законом Ципфа-Мандельброта. Як бачимо апроксимація досить точно описує графік."
-        ) as tracker:
-            self.play(FadeIn(en_raw_zipf_title, en_raw_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot))
+        self.play(FadeIn(en_raw_zipf_title, en_raw_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot))
+        self.wait(13)
 
         self.play(FadeOut(en_raw_zipf_title, en_raw_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot))
 
@@ -252,12 +245,10 @@ not             1382\n\
         det_coef_1_explanations = VGroup(det_coef_1_group1, det_coef_1_group2).arrange(DOWN, aligned_edge=LEFT, buff=0.5)
         det_coef_1_explanations.next_to(det_coef_1_formula, DOWN, buff=1)
 
-        with self.voiceover(
-                text="Для оцінки точності апроксимації використаємо коефіцієнт детермінації. Його означення зараз перед вами."
-        ) as tracker:
-            self.play(Write(det_coef_1_title))
-            self.play(Write(det_coef_1_formula))
-            self.play(Write(det_coef_1_explanations))
+
+        self.play(Write(det_coef_1_title))
+        self.play(Write(det_coef_1_formula))
+        self.play(Write(det_coef_1_explanations))
 
         self.play(FadeOut(det_coef_1_title, det_coef_1_formula, det_coef_1_explanations))
 
@@ -272,10 +263,8 @@ not             1382\n\
         det_coef_2_tss_formula = MathTex(r"TSS = \sum_{t=1}^{n} (y_t - \overline{y})^2 = n \hat{\sigma}_y^2",font_size=25)
         det_coef_2_explanations = VGroup(det_coef_2_title, det_coef_2_formula, det_coef_2_rss_text, det_coef_2_rss_formula, det_coef_2_rss_desc, det_coef_2_tss_text, det_coef_2_tss_formula).arrange(DOWN, aligned_edge=LEFT)
 
-        with self.voiceover(
-                text="Для вибіркового коефіцієнту детермінації використовують наступне означення."
-        ) as tracker:
-            self.play(Write(det_coef_2_explanations))
+        self.play(Write(det_coef_2_explanations))
+        self.wait(3)
 
         self.play(FadeOut(det_coef_2_explanations))
 
@@ -287,13 +276,12 @@ not             1382\n\
         en_raw_zipf_for_det_coef = MathTex(r"R^2 = 0.9810", font_size=25).shift(LEFT * 4 + DOWN)
         en_raw_zipf_mandelbrot_for_det_coef = MathTex(r"R^2 = 0.9831", font_size=25).shift(RIGHT * 4 + DOWN)
 
-        with self.voiceover(
-                text="У нашому дослідженні коефіцієнт детермінації досить блиський до 1, що означає високу точність апроксимації."
-        ) as tracker:
-            self.play(Write(en_raw_zipf_title_for_det_coef))
-            self.play(Write(en_raw_zipf_mandelbrot_title_for_det_coef))
-            self.play(Write(en_raw_zipf_for_det_coef))
-            self.play(Write(en_raw_zipf_mandelbrot_for_det_coef))
+
+        self.play(Write(en_raw_zipf_title_for_det_coef))
+        self.play(Write(en_raw_zipf_mandelbrot_title_for_det_coef))
+        self.play(Write(en_raw_zipf_for_det_coef))
+        self.play(Write(en_raw_zipf_mandelbrot_for_det_coef))
+        self.wait(1.5)
 
         self.play(FadeOut(en_raw_zipf_title_for_det_coef, en_raw_zipf_mandelbrot_title_for_det_coef, en_raw_zipf_for_det_coef, en_raw_zipf_mandelbrot_for_det_coef))
 
@@ -302,10 +290,9 @@ not             1382\n\
         lemmatization = with_card(ImageMobject(asset("lemmatization.png")).shift(2*DOWN).scale(2), pad=0.25)
         stanza = with_card(ImageMobject(asset("stanza-logo.png")).shift(UP).scale(2), pad=0.25)
 
-        with self.voiceover(
-                text="У більшості мов одне і теж слово може мати декілька форм. Спробуємо дослідити закон Ципфа попередньо перевівши усі слова до початкової форми. Такий процес називається лематизацією. Для цього використаємо проєкт Stanza."
-        ) as tracker:
-            self.play(FadeIn(lemmatization, stanza))
+
+        self.play(FadeIn(lemmatization, stanza))
+        self.wait(14.5)
 
         self.play(FadeOut(lemmatization, stanza))
 
@@ -320,11 +307,9 @@ not             1382\n\
             pad=0.18,
         )
 
-        with self.voiceover(
-                text="Тепер графік залежності частоти слова від рангу у логарифмічному масштабі набуває такого вигляду."
-        ) as tracker:
-            self.play(
-                FadeIn(en_lemma_zipf_title, en_lemma_zipf_mandelbrot_title, en_lemma_zipf, en_lemma_zipf_mandelbrot))
+
+        self.play(FadeIn(en_lemma_zipf_title, en_lemma_zipf_mandelbrot_title, en_lemma_zipf, en_lemma_zipf_mandelbrot))
+        self.wait(4)
 
         self.play(FadeOut(en_lemma_zipf_title, en_lemma_zipf_mandelbrot_title, en_lemma_zipf, en_lemma_zipf_mandelbrot))
 
@@ -365,11 +350,10 @@ not             1382\n\
         raw = styled_text("Без лематизації", font_size=20).shift(UP * 1.7).to_edge(LEFT)
         lemma = styled_text("З лематизацією", font_size=20).shift(DOWN * 2.1).to_edge(LEFT)
 
-        with self.voiceover(
-                text="Порівняємо також коефіцієнт детермінації. Як бачимо апроксимація за законом Ципфа-Мандельброта та лематизація справді збільшують коефіцієнт детермінації, тобто точність апроксимації."
-        ) as tracker:
-            self.play(FadeIn(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
+
+        self.play(FadeIn(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                              en_lemma_zipf, en_lemma_zipf_mandelbrot))
+        self.wait(10)
 
         self.play(FadeOut(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                           en_lemma_zipf, en_lemma_zipf_mandelbrot))
@@ -414,11 +398,10 @@ not             1382\n\
         raw = styled_text("Без лематизації", font_size=20).shift(UP * 1.7).to_edge(LEFT)
         lemma = styled_text("З лематизацією", font_size=20).shift(DOWN * 2.1).to_edge(LEFT)
 
-        with self.voiceover(
-                text="Тепер нанесемо на мапу коефіцієнти детермінації. Як видно лематизація зазвичай справді збільшує коефіцієнт детермінації, проте є особливість в литовській мові, що потребує додаткового дослідження."
-        ) as tracker:
-            self.play(FadeIn(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
+
+        self.play(FadeIn(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                              en_lemma_zipf, en_lemma_zipf_mandelbrot))
+        self.wait(10)
 
         self.play(FadeOut(raw, lemma, en_zipf_title, en_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot,
                           en_lemma_zipf, en_lemma_zipf_mandelbrot))
@@ -434,7 +417,7 @@ not             1382\n\
             color=TEXT_COLOR
         )
         self.play(Write(statement), run_time=2)
-        self.wait(3)
+        self.wait(8)
         self.play(FadeOut(statement))
 
         title_2 = Text("Імовірнісна модель ідентифікації", color=ACCENT_COLOR).to_edge(UP)
@@ -508,7 +491,7 @@ not             1382\n\
             self.play(FadeIn(line, shift=UP * 0.3), run_time=1.5)
             self.wait(1)
 
-        self.wait(3)
+        self.wait(7)
 
         self.play(
             *[FadeOut(m) for m in self.mobjects],
