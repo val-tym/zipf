@@ -17,7 +17,7 @@ class ZipfPresentation(VoiceoverScene):
         # Візуальна стилізація сцени
         # -------------------------------
         BASE_DIR = os.path.dirname(__file__)
-        RESULTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "results_2026-04-25_20-56-10"))
+        RESULTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "results_2026-05-13_17-57-26"))
 
         def asset(path: str) -> str:
             return os.path.join(BASE_DIR, path)
@@ -164,14 +164,16 @@ class ZipfPresentation(VoiceoverScene):
 
         # ================================================
 
-        pg = with_card(ImageMobject(asset("pg-logo.jpg")), pad=0.18)
+        pg = with_card(ImageMobject(asset("pg-logo.jpg")), pad=0.18).to_edge(LEFT)
+        ws = with_card(ImageMobject(asset("wikisource.png")), pad=0.18).scale(0.35)
+        ia = with_card(ImageMobject(asset("internet_archive.png")), pad=0.18).scale(0.37).to_edge(RIGHT)
 
         with self.voiceover(
-                text="Для дослідження використаємо матеріали проекту Гутенберг - найстарішу універсальну електронну бібліотеку."
+                text="Для дослідження використаємо відкриті електронні бібліотеки: проект Гутенберг, Вікіджерела та Internet Archive. Це також дозволяє додати українські тексти."
         ) as tracker:
-            self.play(FadeIn(pg))
+            self.play(FadeIn(pg,ws,ia))
 
-        self.play(FadeOut(pg))
+        self.play(FadeOut(pg,ws,ia))
 
         # ================================================
 
@@ -191,28 +193,27 @@ class ZipfPresentation(VoiceoverScene):
 
         # ================================================
 
-        en_top = Text("the             10282\n\
-and             5434\n\
-to                5174\n\
-i                   4908\n\
-of                4749\n\
-a                   4414\n\
-that            3094\n\
-in                3025\n\
-it                 2993\n\
-he                2944\n\
-you            2858\n\
-was             2704\n\
-is                1897\n\
-his             1892\n\
-had            1654\n\
-she             1646\n\
-with         1479\n\
-have          1463\n\
-as                1437\n\
-not            1382\n\
+        en_top = Text("the             13495\n\
+of                7920\n\
+and             6547\n\
+to                6440\n\
+that            4050\n\
+in                3486\n\
+is                 3012\n\
+they           2411\n\
+not             2406\n\
+by               2338\n\
+a                   2281\n\
+which       2184\n\
+it                 2158\n\
+he                2086\n\
+for              2008\n\
+be                1997\n\
+but             1787\n\
+are               1713\n\
+as                 1689\n\
+this            1534\n\
 ...", font_size=20)
-
 
         self.play(Write(en_top))
         self.wait(4)

@@ -6,7 +6,7 @@ This project implements an automated pipeline for empirical verification of the 
 
 The program:
 
-* downloads random texts from Project Gutenberg
+* downloads random texts from Project Gutenberg, Wikisource, and Internet Archive
 * preprocesses and cleans the data
 * optionally performs lemmatization using Stanza
 * computes word frequency distributions
@@ -21,7 +21,9 @@ The entire pipeline is designed to be **reproducible, language-agnostic, and sta
 
 ### 1. Randomized Text Sampling
 
-* Texts are selected randomly via the Gutenberg catalog API
+* Texts are selected randomly from several open digital libraries
+* Project Gutenberg is used first; Wikisource and Internet Archive provide fallback corpora
+* Ukrainian is explicitly included and can be collected via Ukrainian Wikisource / Internet Archive when Gutenberg has no plain-text books
 * Avoids manual selection bias
 * Ensures variability between runs
 
@@ -144,8 +146,8 @@ results_2026-04-19_21-37-12/
 
 ## Limitations
 
-* Gutenberg texts are not perfectly balanced across genres
-* Random sampling is limited by API pagination
+* Open-library texts are not perfectly balanced across genres
+* Random sampling is limited by each provider's API and catalog metadata
 * Lemmatization quality depends on language models
 * Zipf’s law is approximate (deviations expected in head and tail)
 

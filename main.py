@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 from datetime import datetime
 import os
+from urllib.parse import quote
 
 # -------------------------------
 # НАЛАШТУВАННЯ
@@ -18,6 +19,40 @@ Q_SEARCH_MAX = 50.0
 Q_SEARCH_STEPS = 1000
 REQUEST_TIMEOUT = 20
 MAX_BOOK_ATTEMPTS = 500
+TEXT_SOURCES = ["gutenberg", "wikisource", "internet_archive"]
+INTERNET_ARCHIVE_ROWS = 50
+INTERNET_ARCHIVE_LANGUAGE_NAMES = {
+    "en": "English",
+    "be": "Belarusian",
+    "uk": "Ukrainian",
+    "bg": "Bulgarian",
+    "fi": "Finnish",
+    "nl": "Dutch",
+    "cs": "Czech",
+    "fr": "French",
+    "pl": "Polish",
+    "da": "Danish",
+    "hr": "Croatian",
+    "pt": "Portuguese",
+    "de": "German",
+    "hu": "Hungarian",
+    "ro": "Romanian",
+    "el": "Greek",
+    "it": "Italian",
+    "sk": "Slovak",
+    "es": "Spanish",
+    "lt": "Lithuanian",
+    "sl": "Slovenian",
+    "et": "Estonian",
+    "lv": "Latvian",
+    "sv": "Swedish",
+}
+SOURCE_NAMES = {
+    "gutenberg": "Project Gutenberg",
+    "wikisource": "Wikisource",
+    "internet_archive": "Internet Archive",
+}
+_SOURCE_CACHE = {}
 
 # -------------------------------
 # 0. Папка результатів
@@ -33,7 +68,7 @@ def write_report(text):
         f.write(text + "\n")
 
 # -------------------------------
-# 1. Gutenberg API
+# 1. Джерела текстів
 # -------------------------------
 def get_books(lang):
     url = f"https://gutendex.com/books?languages={lang}"
@@ -42,17 +77,120 @@ def get_books(lang):
     return r.json()["results"]
 
 def get_random_book_url(lang):
-    books = get_books(lang)
-    plain_text_urls = []
-    for book in books:
-        for k, v in book["formats"].items():
-            if "text/plain" in k:
-                plain_text_urls.append(v)
+    cache_key = ("gutenberg_urls", lang)
+    if cache_key in _SOURCE_CACHE:
+        plain_text_urls = _SOURCE_CACHE[cache_key]
+    else:
+        books = get_books(lang)
+        plain_text_urls = []
+        for book in books:
+            for k, v in book["formats"].items():
+                if "text/plain" in k:
+                    plain_text_urls.append(v)
+        _SOURCE_CACHE[cache_key] = plain_text_urls
+
     if not plain_text_urls:
         raise ValueError(f"No text/plain books found for language '{lang}'")
 
-    while True:
-        return random.choice(plain_text_urls)
+    return random.choice(plain_text_urls)
+
+def download_gutenberg_text(lang):
+    url = get_random_book_url(lang)
+    return strip_gutenberg(download_text(url)), url
+
+def download_wikisource_text(lang):
+    api_url = f"https://{lang}.wikisource.org/w/api.php"
+    params = {
+        "action": "query",
+        "format": "json",
+        "generator": "random",
+        "grnnamespace": 0,
+        "grnlimit": 1,
+        "prop": "extracts",
+        "explaintext": 1,
+        "exlimit": 1,
+        "redirects": 1,
+    }
+    r = requests.get(api_url, params=params, timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    pages = r.json().get("query", {}).get("pages", {})
+    if not pages:
+        raise ValueError(f"No Wikisource pages found for language '{lang}'")
+
+    page = next(iter(pages.values()))
+    text = page.get("extract", "")
+    if not text.strip():
+        raise ValueError(f"Empty Wikisource extract for language '{lang}'")
+
+    title = page.get("title", "")
+    page_url = f"https://{lang}.wikisource.org/wiki/{quote(title.replace(' ', '_'))}"
+    return text, page_url
+
+def get_internet_archive_identifiers(lang):
+    cache_key = ("internet_archive_ids", lang)
+    if cache_key in _SOURCE_CACHE:
+        return _SOURCE_CACHE[cache_key]
+
+    language_name = INTERNET_ARCHIVE_LANGUAGE_NAMES.get(lang)
+    if not language_name:
+        raise ValueError(f"No Internet Archive language mapping for '{lang}'")
+
+    params = {
+        "q": f'mediatype:texts AND languageSorter:"{language_name}"',
+        "fl[]": "identifier",
+        "rows": INTERNET_ARCHIVE_ROWS,
+        "page": 1,
+        "output": "json",
+    }
+    r = requests.get("https://archive.org/advancedsearch.php", params=params, timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    docs = r.json().get("response", {}).get("docs", [])
+    identifiers = [doc["identifier"] for doc in docs if doc.get("identifier")]
+    _SOURCE_CACHE[cache_key] = identifiers
+
+    if not identifiers:
+        raise ValueError(f"No Internet Archive texts found for language '{lang}'")
+    return identifiers
+
+def get_internet_archive_text_files(identifier):
+    cache_key = ("internet_archive_files", identifier)
+    if cache_key in _SOURCE_CACHE:
+        return _SOURCE_CACHE[cache_key]
+
+    r = requests.get(f"https://archive.org/metadata/{identifier}", timeout=REQUEST_TIMEOUT)
+    r.raise_for_status()
+    files = r.json().get("files", [])
+    plain_text_urls = []
+    for file_info in files:
+        name = file_info.get("name", "")
+        lower_name = name.lower()
+        if lower_name.endswith("_djvu.txt") or (
+            lower_name.endswith(".txt")
+            and not lower_name.endswith("_meta.txt")
+            and not lower_name.endswith("_files.xml")
+        ):
+            plain_text_urls.append(f"https://archive.org/download/{identifier}/{quote(name)}")
+
+    _SOURCE_CACHE[cache_key] = plain_text_urls
+    if not plain_text_urls:
+        raise ValueError(f"No plain text files found for Internet Archive item '{identifier}'")
+    return plain_text_urls
+
+def download_internet_archive_text(lang):
+    identifiers = get_internet_archive_identifiers(lang)
+    identifier = random.choice(identifiers)
+    urls = get_internet_archive_text_files(identifier)
+    url = random.choice(urls)
+    return download_text(url), url
+
+def download_source_text(lang, source):
+    if source == "gutenberg":
+        return download_gutenberg_text(lang)
+    if source == "wikisource":
+        return download_wikisource_text(lang)
+    if source == "internet_archive":
+        return download_internet_archive_text(lang)
+    raise ValueError(f"Unknown text source: {source}")
 
 # -------------------------------
 # 2. Завантаження
@@ -86,23 +224,27 @@ def preprocess(text):
 # -------------------------------
 # 5. Накопичення токенів
 # -------------------------------
-def collect_tokens(lang): 
+def collect_tokens(lang, sources=None):
+    sources = sources or TEXT_SOURCES
     tokens = []
     attempts = 0
     while len(tokens) < TARGET_TOKENS and attempts < MAX_BOOK_ATTEMPTS:
         attempts += 1
         try:
-            url = get_random_book_url(lang)
-            print(f"[{lang}] {url}")
-            text = download_text(url)
-            text = strip_gutenberg(text)
-            tokens.extend(preprocess(text))
+            source = sources[(attempts - 1) % len(sources)]
+            text, url = download_source_text(lang, source)
+            print(f"[{lang}] {SOURCE_NAMES[source]}: {url}")
+            new_tokens = preprocess(text)
+            if not new_tokens:
+                raise ValueError("Downloaded text did not contain alphabetic tokens")
+            tokens.extend(new_tokens)
         except Exception:
             continue
     if len(tokens) < TARGET_TOKENS:
         raise RuntimeError(
             f"Could not collect enough tokens for '{lang}'. "
-            f"Collected {len(tokens)} out of {TARGET_TOKENS} after {attempts} attempts."
+            f"Collected {len(tokens)} out of {TARGET_TOKENS} after {attempts} attempts "
+            f"from sources: {', '.join(SOURCE_NAMES[s] for s in sources)}."
         )
     return tokens[:TARGET_TOKENS]
 
@@ -132,6 +274,34 @@ def check_gutenberg_availability(lang):
     if plain_text_count == 0:
         return False, "No text/plain books on first Gutendex page"
     return True, f"{plain_text_count} books with text/plain on first Gutendex page"
+
+def check_wikisource_availability(lang):
+    try:
+        text, _ = download_wikisource_text(lang)
+    except Exception as e:
+        return False, f"Wikisource unavailable: {e}"
+
+    token_count = len(preprocess(text))
+    if token_count == 0:
+        return False, "Wikisource returned no alphabetic tokens"
+    return True, f"random page available ({token_count} tokens)"
+
+def check_internet_archive_availability(lang):
+    try:
+        identifiers = get_internet_archive_identifiers(lang)
+    except Exception as e:
+        return False, f"Internet Archive unavailable: {e}"
+
+    return True, f"{len(identifiers)} text items found"
+
+def check_source_availability(lang, source):
+    if source == "gutenberg":
+        return check_gutenberg_availability(lang)
+    if source == "wikisource":
+        return check_wikisource_availability(lang)
+    if source == "internet_archive":
+        return check_internet_archive_availability(lang)
+    raise ValueError(f"Unknown text source: {source}")
 
 def check_stanza_availability(lang):
     try:
@@ -242,19 +412,24 @@ if __name__ == "__main__":
 
     process_languages = []
     lemma_supported = {}
+    source_supported = {}
 
     for lang in LANGUAGES:
-        gut_ok, gut_msg = check_gutenberg_availability(lang)
+        source_supported[lang] = []
+        for source in TEXT_SOURCES:
+            source_ok, source_msg = check_source_availability(lang, source)
+            write_report(f"{lang}: {SOURCE_NAMES[source]}={'OK' if source_ok else 'SKIP'} ({source_msg})")
+            if source_ok:
+                source_supported[lang].append(source)
+
         stz_ok, stz_msg = check_stanza_availability(lang)
         lemma_supported[lang] = stz_ok
-
-        write_report(f"{lang}: Gutenberg={'OK' if gut_ok else 'SKIP'} ({gut_msg})")
         write_report(f"{lang}: Stanza={'OK' if stz_ok else 'SKIP'} ({stz_msg})")
 
-        if gut_ok:
+        if source_supported[lang]:
             process_languages.append(lang)
         else:
-            print(f"[SKIP] {lang} (Gutenberg)")
+            print(f"[SKIP] {lang} (no text sources)")
 
     if not process_languages:
         raise RuntimeError("No languages available for processing after availability checks.")
@@ -262,8 +437,9 @@ if __name__ == "__main__":
     for lang in process_languages:
         print(f"\n=== {lang} ===")
         write_report(f"\n=== LANGUAGE: {lang} ===")
+        write_report("Text sources: " + ", ".join(SOURCE_NAMES[s] for s in source_supported[lang]))
 
-        tokens = collect_tokens(lang)
+        tokens = collect_tokens(lang, source_supported[lang])
         raw_token_count, raw_word_count = token_word_stats(tokens)
 
         # RAW

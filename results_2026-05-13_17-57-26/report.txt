@@ -1,0 +1,1349 @@
+Experiment started: 2026-05-13_17-57-26
+Target tokens: 200000
+
+Language availability check:
+en: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+en: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://en.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+en: Internet Archive=OK (50 text items found)
+en: Stanza=OK (Stanza tokenize+lemma available)
+be: Project Gutenberg=SKIP (No text/plain books on first Gutendex page)
+be: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://be.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+be: Internet Archive=OK (50 text items found)
+be: Stanza=OK (Stanza tokenize+lemma available)
+uk: Project Gutenberg=SKIP (No text/plain books on first Gutendex page)
+uk: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://uk.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+uk: Internet Archive=OK (50 text items found)
+uk: Stanza=OK (Stanza tokenize+lemma available)
+bg: Project Gutenberg=OK (6 books with text/plain on first Gutendex page)
+bg: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://bg.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+bg: Internet Archive=OK (50 text items found)
+bg: Stanza=OK (Stanza tokenize+lemma available)
+fi: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+fi: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://fi.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+fi: Internet Archive=OK (50 text items found)
+fi: Stanza=OK (Stanza tokenize+lemma available)
+nl: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+nl: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://nl.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+nl: Internet Archive=OK (50 text items found)
+nl: Stanza=OK (Stanza tokenize+lemma available)
+cs: Project Gutenberg=OK (12 books with text/plain on first Gutendex page)
+cs: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://cs.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+cs: Internet Archive=OK (50 text items found)
+cs: Stanza=OK (Stanza tokenize+lemma available)
+fr: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+fr: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://fr.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+fr: Internet Archive=OK (50 text items found)
+fr: Stanza=OK (Stanza tokenize+lemma available)
+pl: Project Gutenberg=OK (31 books with text/plain on first Gutendex page)
+pl: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://pl.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+pl: Internet Archive=OK (50 text items found)
+pl: Stanza=OK (Stanza tokenize+lemma available)
+da: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+da: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://da.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+da: Internet Archive=OK (50 text items found)
+da: Stanza=OK (Stanza tokenize+lemma available)
+hr: Project Gutenberg=SKIP (No text/plain books on first Gutendex page)
+hr: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://hr.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+hr: Internet Archive=OK (50 text items found)
+hr: Stanza=OK (Stanza tokenize+lemma available)
+pt: Project Gutenberg=OK (32 books with text/plain on first Gutendex page)
+pt: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://pt.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+pt: Internet Archive=OK (50 text items found)
+pt: Stanza=OK (Stanza tokenize+lemma available)
+de: Project Gutenberg=OK (31 books with text/plain on first Gutendex page)
+de: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://de.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+de: Internet Archive=OK (50 text items found)
+de: Stanza=OK (Stanza tokenize+lemma available)
+hu: Project Gutenberg=SKIP (Gutenberg unavailable: HTTPSConnectionPool(host='gutendex.com', port=443): Read timed out. (read timeout=20))
+hu: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://hu.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+hu: Internet Archive=OK (50 text items found)
+hu: Stanza=OK (Stanza tokenize+lemma available)
+ro: Project Gutenberg=OK (5 books with text/plain on first Gutendex page)
+ro: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://ro.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+ro: Internet Archive=OK (50 text items found)
+ro: Stanza=OK (Stanza tokenize+lemma available)
+el: Project Gutenberg=SKIP (Gutenberg unavailable: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+el: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://el.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+el: Internet Archive=OK (50 text items found)
+el: Stanza=OK (Stanza tokenize+lemma available)
+it: Project Gutenberg=SKIP (Gutenberg unavailable: HTTPSConnectionPool(host='gutendex.com', port=443): Read timed out. (read timeout=20))
+it: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://it.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+it: Internet Archive=OK (50 text items found)
+it: Stanza=OK (Stanza tokenize+lemma available)
+sk: Project Gutenberg=SKIP (No text/plain books on first Gutendex page)
+sk: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://sk.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+sk: Internet Archive=OK (50 text items found)
+sk: Stanza=OK (Stanza tokenize+lemma available)
+es: Project Gutenberg=SKIP (Gutenberg unavailable: HTTPSConnectionPool(host='gutendex.com', port=443): Read timed out. (read timeout=20))
+es: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://es.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+es: Internet Archive=OK (50 text items found)
+es: Stanza=OK (Stanza tokenize+lemma available)
+lt: Project Gutenberg=OK (1 books with text/plain on first Gutendex page)
+lt: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://lt.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+lt: Internet Archive=OK (50 text items found)
+lt: Stanza=OK (Stanza tokenize+lemma available)
+sl: Project Gutenberg=OK (5 books with text/plain on first Gutendex page)
+sl: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://sl.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+sl: Internet Archive=OK (50 text items found)
+sl: Stanza=OK (Stanza tokenize+lemma available)
+et: Project Gutenberg=OK (1 books with text/plain on first Gutendex page)
+et: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://et.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+et: Internet Archive=OK (50 text items found)
+et: Stanza=OK (Stanza tokenize+lemma available)
+lv: Project Gutenberg=SKIP (No text/plain books on first Gutendex page)
+lv: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://lv.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+lv: Internet Archive=OK (50 text items found)
+lv: Stanza=OK (Stanza tokenize+lemma available)
+sv: Project Gutenberg=SKIP (Gutenberg unavailable: HTTPSConnectionPool(host='gutendex.com', port=443): Read timed out. (read timeout=20))
+sv: Wikisource=SKIP (Wikisource unavailable: 403 Client Error: Forbidden for url: https://sv.wikisource.org/w/api.php?action=query&format=json&generator=random&grnnamespace=0&grnlimit=1&prop=extracts&explaintext=1&exlimit=1&redirects=1)
+sv: Internet Archive=OK (50 text items found)
+sv: Stanza=OK (Stanza tokenize+lemma available)
+
+=== LANGUAGE: en ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.2754, R^2 ≈ 0.9803
+RAW Zipf-Mandelbrot: s ≈ 1.3224, q ≈ 19.0190, C ≈ 173325.6687, R^2 ≈ 0.9827
+RAW analyzed: tokens = 200000, unique words = 10870
+Top words (raw):
+the             13495
+of              7920
+and             6547
+to              6440
+that            4050
+in              3486
+is              3012
+they            2411
+not             2406
+by              2338
+a               2281
+which           2184
+it              2158
+he              2086
+for             2008
+be              1997
+but             1787
+are             1713
+as              1689
+this            1534
+
+LEMMA Zipf: s ≈ 1.3626, R^2 ≈ 0.9784
+LEMMA Zipf-Mandelbrot: s ≈ 1.4480, q ≈ 30.7808, C ≈ 378098.0190, R^2 ≈ 0.9828
+LEMMA analyzed: tokens = 200072, unique words = 8564
+Top words (lemma):
+the             13503
+be              9956
+of              7960
+and             6543
+to              6442
+that            4823
+they            3489
+in              3486
+have            2884
+he              2740
+a               2650
+not             2572
+god             2437
+this            2404
+by              2338
+which           2184
+it              2159
+for             2010
+but             1787
+as              1686
+
+=== LANGUAGE: be ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.7296, R^2 ≈ 0.9169
+RAW Zipf-Mandelbrot: s ≈ 0.7296, q ≈ 0.0000, C ≈ 2250.0310, R^2 ≈ 0.9169
+RAW analyzed: tokens = 200000, unique words = 61747
+Top words (raw):
+і               3591
+на              2827
+у               2455
+ў               2332
+з               2040
+не              1956
+а               1860
+в               1496
+и               1153
+што             1046
+за              881
+да              841
+іп              801
+е               799
+ф               758
+апа             717
+па              708
+оё              693
+ога             628
+я               605
+
+LEMMA Zipf: s ≈ 0.8244, R^2 ≈ 0.9269
+LEMMA Zipf-Mandelbrot: s ≈ 0.8244, q ≈ 0.0000, C ≈ 5003.3186, R^2 ≈ 0.9269
+LEMMA analyzed: tokens = 199814, unique words = 47562
+Top words (lemma):
+у               4970
+і               4021
+на              2887
+з               2283
+а               2007
+не              1956
+велічыня        1597
+быць            1266
+и               1163
+што             1099
+о               1009
+беларускі       902
+за              878
+я               853
+да              844
+які             825
+е               821
+іп              801
+год             756
+ён              756
+
+=== LANGUAGE: uk ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.8324, R^2 ≈ 0.9652
+RAW Zipf-Mandelbrot: s ≈ 0.8324, q ≈ 0.0000, C ≈ 6253.6580, R^2 ≈ 0.9652
+RAW analyzed: tokens = 200000, unique words = 40072
+Top words (raw):
+і               4212
+в               4156
+на              3544
+ся              2899
+що              2797
+з               2736
+до              2635
+не              2124
+а               1990
+то              1275
+и               1208
+по              1129
+за              1046
+у               1017
+въ              952
+як              926
+о               835
+та              818
+я               729
+від             717
+
+LEMMA Zipf: s ≈ 0.8795, R^2 ≈ 0.9689
+LEMMA Zipf-Mandelbrot: s ≈ 0.8795, q ≈ 0.0000, C ≈ 8556.3836, R^2 ≈ 0.9689
+LEMMA analyzed: tokens = 198890, unique words = 33344
+Top words (lemma):
+і               4206
+в               4170
+на              3546
+що              2990
+ся              2896
+з               2731
+до              2637
+бути            2231
+не              2125
+а               1989
+ъ               1660
+то              1272
+и               1205
+по              1142
+я               1120
+за              1045
+у               1019
+те              1015
+він             965
+той             964
+
+=== LANGUAGE: bg ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.8807, R^2 ≈ 0.9396
+RAW Zipf-Mandelbrot: s ≈ 0.8807, q ≈ 0.0000, C ≈ 6867.4134, R^2 ≈ 0.9396
+RAW analyzed: tokens = 200000, unique words = 34423
+Top words (raw):
+да              6556
+и               6518
+на              5403
+е               4971
+се              3943
+в               3480
+не              3231
+от              2475
+за              2272
+си              2095
+ще              1993
+с               1824
+а               1650
+по              1483
+че              1435
+са              1434
+това            1305
+но              1221
+като            1183
+ако             984
+
+LEMMA skipped: Stanza failed at runtime ('NoneType' object has no attribute 'isalpha'). Raw-only analysis kept.
+
+=== LANGUAGE: fi ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.8748, R^2 ≈ 0.9533
+RAW Zipf-Mandelbrot: s ≈ 0.8748, q ≈ 0.0000, C ≈ 8052.0030, R^2 ≈ 0.9533
+RAW analyzed: tokens = 200000, unique words = 42209
+Top words (raw):
+ja              4800
+n               3223
+on              2664
+ei              2062
+t               1804
+oli             1615
+se              1461
+niin            1368
+kuin            1312
+kun             1273
+hän             1202
+mutta           1059
+ett             1014
+h               997
+m               885
+nyt             882
+sen             850
+joka            764
+en              763
+k               733
+
+LEMMA Zipf: s ≈ 1.0897, R^2 ≈ 0.9731
+LEMMA Zipf-Mandelbrot: s ≈ 1.0998, q ≈ 6.2563, C ≈ 41578.0621, R^2 ≈ 0.9736
+LEMMA analyzed: tokens = 193366, unique words = 21246
+Top words (lemma):
+olla            8769
+ei              5045
+ja              4795
+se              4584
+n               3220
+hän             2631
+joka            2309
+minä            2232
+että            2073
+kun             2017
+t               1798
+niin            1615
+kuin            1314
+sinä            1288
+jos             1093
+mutta           1064
+voida           1015
+h               996
+nyt             915
+tämä            904
+
+=== LANGUAGE: nl ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.1791, R^2 ≈ 0.9781
+RAW Zipf-Mandelbrot: s ≈ 1.1904, q ≈ 4.6046, C ≈ 66889.9010, R^2 ≈ 0.9787
+RAW analyzed: tokens = 200000, unique words = 14777
+Top words (raw):
+en              7153
+de              6683
+het             5249
+een             4320
+zij             3905
+hij             3534
+dat             3334
+van             3134
+in              2916
+te              2872
+ik              2684
+niet            2461
+zijn            2456
+haar            2341
+was             2284
+den             1970
+maar            1948
+op              1926
+die             1763
+er              1679
+
+LEMMA Zipf: s ≈ 1.2634, R^2 ≈ 0.9806
+LEMMA Zipf-Mandelbrot: s ≈ 1.2816, q ≈ 5.6557, C ≈ 105812.6052, R^2 ≈ 0.9815
+LEMMA analyzed: tokens = 196006, unique words = 10745
+Top words (lemma):
+zijn            7222
+en              7153
+de              7067
+het             5249
+een             4388
+zij             3905
+hij             3534
+dat             3335
+van             3134
+te              3089
+hebben          2952
+in              2917
+ik              2684
+niet            2462
+haar            2385
+die             2056
+den             1967
+maar            1948
+op              1926
+zullen          1845
+
+=== LANGUAGE: cs ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.9112, R^2 ≈ 0.9602
+RAW Zipf-Mandelbrot: s ≈ 0.9112, q ≈ 0.0000, C ≈ 10370.2003, R^2 ≈ 0.9602
+RAW analyzed: tokens = 200000, unique words = 36111
+Top words (raw):
+a               7567
+se              6772
+na              3279
+v               3027
+že              2586
+jsem            2321
+to              1765
+s               1568
+do              1461
+ale             1167
+k               1136
+si              1122
+tak             1097
+i               1052
+za              1050
+z               1033
+je              1032
+co              1012
+mne             966
+byl             921
+
+LEMMA Zipf: s ≈ 0.9801, R^2 ≈ 0.9588
+LEMMA Zipf-Mandelbrot: s ≈ 0.9801, q ≈ 0.0000, C ≈ 15363.8031, R^2 ≈ 0.9588
+LEMMA analyzed: tokens = 200687, unique words = 26860
+Top words (lemma):
+být             9654
+se              8341
+a               7567
+ten             3676
+v               3575
+on              3498
+na              3276
+já              2625
+že              2582
+s               1567
+svůj            1483
+k               1472
+do              1467
+z               1240
+ale             1163
+jeho            1156
+co              1154
+všechen         1144
+tak             1096
+i               1053
+
+=== LANGUAGE: fr ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.1452, R^2 ≈ 0.9763
+RAW Zipf-Mandelbrot: s ≈ 1.1517, q ≈ 2.6527, C ≈ 49718.5170, R^2 ≈ 0.9766
+RAW analyzed: tokens = 200000, unique words = 15791
+Top words (raw):
+de              10023
+la              4810
+et              4657
+le              4090
+il              3542
+à               3376
+que             3333
+l               3104
+en              2875
+d               2619
+je              2530
+les             2351
+qu              2307
+un              2183
+elle            1977
+vous            1941
+ne              1913
+qui             1830
+est             1751
+pas             1604
+
+LEMMA Zipf: s ≈ 1.2131, R^2 ≈ 0.9755
+LEMMA Zipf-Mandelbrot: s ≈ 1.2225, q ≈ 3.0030, C ≈ 69474.9798, R^2 ≈ 0.9758
+LEMMA analyzed: tokens = 203007, unique words = 12093
+Top words (lemma):
+le              17420
+de              14689
+lui             6852
+que             5639
+son             5161
+et              4657
+un              4522
+à               4425
+être            4388
+moi             3819
+avoir           3044
+en              2874
+ce              2316
+vous            1941
+ne              1913
+qui             1830
+pas             1604
+faire           1508
+pour            1500
+n               1323
+
+=== LANGUAGE: pl ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.8305, R^2 ≈ 0.9511
+RAW Zipf-Mandelbrot: s ≈ 0.8305, q ≈ 0.0000, C ≈ 5754.5109, R^2 ≈ 0.9511
+RAW analyzed: tokens = 200000, unique words = 48505
+Top words (raw):
+w               5751
+i               5090
+się             3468
+na              3326
+nie             2766
+z               2741
+do              2060
+a               1620
+że              1481
+to              1345
+o               1257
+po              854
+jest            812
+za              768
+jak             742
+od              666
+dla             640
+przez           567
+ale             543
+tak             494
+
+LEMMA Zipf: s ≈ 0.9274, R^2 ≈ 0.9486
+LEMMA Zipf-Mandelbrot: s ≈ 0.9274, q ≈ 0.0000, C ≈ 11502.8758, R^2 ≈ 0.9486
+LEMMA analyzed: tokens = 199963, unique words = 35287
+Top words (lemma):
+w               5955
+i               5091
+być             3660
+się             3521
+na              3366
+z               3059
+on              2820
+nie             2760
+do              2058
+ten             1868
+to              1692
+a               1618
+że              1483
+o               1254
+który           1136
+po              854
+za              808
+mieć            749
+jak             739
+ja              697
+
+=== LANGUAGE: da ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.0330, R^2 ≈ 0.9674
+RAW Zipf-Mandelbrot: s ≈ 1.0349, q ≈ 1.1011, C ≈ 24433.0222, R^2 ≈ 0.9674
+RAW analyzed: tokens = 200000, unique words = 24042
+Top words (raw):
+og              6441
+i               4115
+at              4044
+det             3355
+en              3022
+den             2820
+de              2819
+han             2630
+til             2535
+af              2232
+med             2216
+jeg             2212
+var             2081
+for             1996
+er              1942
+som             1903
+der             1868
+ikke            1849
+et              1626
+sig             1539
+
+LEMMA Zipf: s ≈ 1.0862, R^2 ≈ 0.9686
+LEMMA Zipf-Mandelbrot: s ≈ 1.0892, q ≈ 1.4014, C ≈ 33524.4956, R^2 ≈ 0.9687
+LEMMA analyzed: tokens = 199753, unique words = 19799
+Top words (lemma):
+og              6438
+den             5638
+en              4791
+være            4571
+i               4119
+at              4048
+han             3675
+det             3355
+jeg             3170
+til             2537
+have            2368
+af              2229
+med             2215
+for             1999
+som             1902
+der             1871
+ikke            1846
+sig             1539
+du              1468
+vi              1392
+
+=== LANGUAGE: hr ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.8881, R^2 ≈ 0.9673
+RAW Zipf-Mandelbrot: s ≈ 0.8883, q ≈ 0.1502, C ≈ 9618.6184, R^2 ≈ 0.9673
+RAW analyzed: tokens = 200000, unique words = 40276
+Top words (raw):
+i               7561
+u               5346
+je              4796
+se              3134
+na              2713
+da              2441
+za              2009
+a               1835
+s               1433
+su              1352
+ne              1308
+od              1179
+što             901
+će              844
+o               824
+po              750
+to              730
+koji            726
+te              712
+iz              701
+
+LEMMA Zipf: s ≈ 0.9317, R^2 ≈ 0.9656
+LEMMA Zipf-Mandelbrot: s ≈ 0.9317, q ≈ 0.0000, C ≈ 12124.9704, R^2 ≈ 0.9656
+LEMMA analyzed: tokens = 199646, unique words = 33217
+Top words (lemma):
+biti            9075
+i               7557
+u               5340
+sebe            3294
+na              2712
+da              2441
+on              2092
+za              2005
+sa              1927
+koji            1912
+taj             1870
+a               1833
+htjeti          1318
+ne              1309
+od              1178
+ja              1015
+svoj            992
+što             952
+o               824
+po              749
+
+=== LANGUAGE: pt ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.0033, R^2 ≈ 0.9714
+RAW Zipf-Mandelbrot: s ≈ 1.0041, q ≈ 0.5005, C ≈ 19789.8683, R^2 ≈ 0.9714
+RAW analyzed: tokens = 200000, unique words = 25147
+Top words (raw):
+o               7134
+a               6975
+e               6919
+de              6362
+que             5590
+da              2884
+do              2752
+um              2559
+com             2478
+os              2442
+se              2323
+d               1969
+em              1882
+para            1766
+uma             1751
+as              1739
+não             1487
+na              1365
+por             1288
+no              1235
+
+LEMMA Zipf: s ≈ 1.0652, R^2 ≈ 0.9737
+LEMMA Zipf-Mandelbrot: s ≈ 1.0674, q ≈ 1.0511, C ≈ 29406.4075, R^2 ≈ 0.9737
+LEMMA analyzed: tokens = 213433, unique words = 20078
+Top words (lemma):
+o               33162
+de              14028
+e               6913
+que             5589
+em              5234
+um              4433
+com             2474
+por             2462
+ser             2447
+se              2324
+d               1963
+seu             1868
+para            1766
+não             1487
+como            1192
+eu              1077
+á               878
+esse            876
+n               855
+mais            835
+
+=== LANGUAGE: de ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.9554, R^2 ≈ 0.9496
+RAW Zipf-Mandelbrot: s ≈ 0.9554, q ≈ 0.0000, C ≈ 13026.2449, R^2 ≈ 0.9496
+RAW analyzed: tokens = 200000, unique words = 29963
+Top words (raw):
+und             6128
+die             5960
+der             5759
+zu              3821
+in              3150
+den             2679
+von             2430
+er              2346
+das             2163
+sie             1944
+dem             1769
+es              1608
+nicht           1491
+des             1450
+sich            1417
+ein             1389
+mit             1367
+auf             1090
+an              1086
+eine            1027
+
+LEMMA Zipf: s ≈ 1.0400, R^2 ≈ 0.9574
+LEMMA Zipf-Mandelbrot: s ≈ 1.0401, q ≈ 0.0501, C ≈ 22757.1653, R^2 ≈ 0.9574
+LEMMA analyzed: tokens = 201860, unique words = 22296
+Top words (lemma):
+der             22167
+und             6121
+zu              4553
+in              4103
+ein             4092
+sein            3962
+er              3192
+von             2635
+sie             2191
+haben           1997
+werden          1779
+es              1611
+nicht           1489
+sich            1418
+mit             1366
+an              1344
+ihr             1328
+auf             1095
+so              1007
+wie             992
+
+=== LANGUAGE: hu ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.7516, R^2 ≈ 0.9172
+RAW Zipf-Mandelbrot: s ≈ 0.7516, q ≈ 0.0000, C ≈ 2556.7341, R^2 ≈ 0.9172
+RAW analyzed: tokens = 200000, unique words = 53813
+Top words (raw):
+a               16284
+az              5297
+s               2967
+és              2750
+is              2607
+hogy            1942
+nem             1849
+egy             1260
+de              1123
+meg             1014
+volt            968
+fáy             958
+csak            895
+mint            850
+ez              777
+e               743
+már             740
+ki              697
+még             692
+ha              638
+
+LEMMA Zipf: s ≈ 0.8240, R^2 ≈ 0.9323
+LEMMA Zipf-Mandelbrot: s ≈ 0.8240, q ≈ 0.0000, C ≈ 4721.5325, R^2 ≈ 0.9323
+LEMMA analyzed: tokens = 199538, unique words = 44064
+Top words (lemma):
+a               16267
+az              6452
+s               2963
+és              2749
+is              2604
+hogy            1951
+van             1940
+nem             1850
+ez              1838
+egy             1254
+de              1120
+meg             1015
+fáy             980
+csak            907
+mint            849
+ki              794
+e               741
+már             738
+még             690
+lesz            642
+
+=== LANGUAGE: ro ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 1.1052, R^2 ≈ 0.9753
+RAW Zipf-Mandelbrot: s ≈ 1.1151, q ≈ 5.5556, C ≈ 45858.9438, R^2 ≈ 0.9757
+RAW analyzed: tokens = 200000, unique words = 19760
+Top words (raw):
+de              12267
+a               4748
+dr              4068
+şi              2826
+e               2703
+cu              2640
+in              2281
+pe              2230
+o               2223
+care            2119
+se              2103
+în              2084
+ca              1803
+un              1723
+la              1711
+nu              1698
+și              1631
+si              1605
+este            1512
+să              1421
+
+LEMMA Zipf: s ≈ 1.2245, R^2 ≈ 0.9785
+LEMMA Zipf-Mandelbrot: s ≈ 1.2483, q ≈ 9.9600, C ≈ 101746.0823, R^2 ≈ 0.9796
+LEMMA analyzed: tokens = 199790, unique words = 13176
+Top words (lemma):
+de              12257
+avea            7725
+fi              7274
+un              4551
+domn            4550
+şi              2825
+cu              2640
+model           2606
+eu              2318
+care            2311
+in              2277
+pe              2229
+sine            2169
+în              2087
+el              1968
+lui             1801
+ca              1797
+la              1712
+nu              1699
+și              1631
+
+=== LANGUAGE: el ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.7672, R^2 ≈ 0.9236
+RAW Zipf-Mandelbrot: s ≈ 0.7672, q ≈ 0.0000, C ≈ 2870.9340, R^2 ≈ 0.9236
+RAW analyzed: tokens = 200000, unique words = 49996
+Top words (raw):
+καὶ             3682
+τῆς             3333
+και             3182
+τοῦ             2437
+να              2099
+του             2096
+τὴν             1994
+της             1965
+το              1960
+τῶν             1867
+η               1742
+την             1667
+που             1419
+τὸ              1290
+των             1245
+για             1134
+ἐν              1054
+ο               949
+τα              945
+νὰ              920
+
+LEMMA Zipf: s ≈ 0.8092, R^2 ≈ 0.9257
+LEMMA Zipf-Mandelbrot: s ≈ 0.8092, q ≈ 0.0000, C ≈ 3922.5735, R^2 ≈ 0.9257
+LEMMA analyzed: tokens = 202802, unique words = 42957
+Top words (lemma):
+ο               19071
+εγώ             4307
+σε              3743
+καὶ             3680
+και             3302
+του             2448
+να              2102
+τὴν             1996
+τῶν             1874
+ώς              1605
+που             1418
+τὸ              1287
+για             1137
+αυτός           1082
+είμαι           1075
+ἐν              1053
+νὰ              918
+ένας            855
+μου             841
+πρός            709
+
+=== LANGUAGE: it ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.8891, R^2 ≈ 0.9360
+RAW Zipf-Mandelbrot: s ≈ 0.8891, q ≈ 0.0000, C ≈ 7793.6284, R^2 ≈ 0.9360
+RAW analyzed: tokens = 200000, unique words = 36387
+Top words (raw):
+di              6617
+e               5468
+che             3649
+la              3409
+a               3319
+il              3084
+in              2450
+i               2202
+non             2095
+per             1792
+l               1595
+si              1587
+del             1561
+le              1515
+della           1450
+con             1394
+da              1135
+è               1101
+un              1041
+al              970
+
+LEMMA Zipf: s ≈ 0.9210, R^2 ≈ 0.9295
+LEMMA Zipf-Mandelbrot: s ≈ 0.9210, q ≈ 0.0000, C ≈ 8864.1131, R^2 ≈ 0.9295
+LEMMA analyzed: tokens = 211899, unique words = 29976
+Top words (lemma):
+il              21059
+di              11534
+e               6449
+a               6396
+in              4229
+essere          3947
+che             3651
+lo              3614
+da              2286
+non             2122
+si              2115
+uno             2087
+per             1845
+con             1394
+avere           1292
+fare            1069
+de              962
+suo             943
+questo          919
+quello          885
+
+=== LANGUAGE: sk ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.7034, R^2 ≈ 0.8957
+RAW Zipf-Mandelbrot: s ≈ 0.7034, q ≈ 0.0000, C ≈ 1671.5566, R^2 ≈ 0.8957
+RAW analyzed: tokens = 200000, unique words = 62155
+Top words (raw):
+a               3263
+h               2383
+der             2218
+b               1875
+the             1584
+die             1573
+v               1520
+j               1452
+in              1363
+i               1274
+sa              1171
+und             1167
+c               1112
+of              1047
+na              916
+s               829
+o               810
+p               806
+k               779
+de              672
+
+LEMMA Zipf: s ≈ 0.7518, R^2 ≈ 0.9070
+LEMMA Zipf-Mandelbrot: s ≈ 0.7518, q ≈ 0.0000, C ≈ 2563.2957, R^2 ≈ 0.9070
+LEMMA analyzed: tokens = 199558, unique words = 54870
+Top words (lemma):
+a               3275
+h               2382
+der             2212
+b               1871
+on              1867
+v               1658
+thý             1582
+dia             1578
+j               1452
+in              1363
+i               1270
+c               1184
+sa              1169
+und             1163
+s               1103
+byť             1079
+of              1047
+z               1039
+na              927
+k               867
+
+=== LANGUAGE: es ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.8861, R^2 ≈ 0.9251
+RAW Zipf-Mandelbrot: s ≈ 0.8861, q ≈ 0.0000, C ≈ 5919.6233, R^2 ≈ 0.9251
+RAW analyzed: tokens = 200000, unique words = 28307
+Top words (raw):
+a               17257
+e               7201
+de              6778
+o               6091
+y               3429
+la              3370
+en              3297
+no              2924
+el              2819
+c               1746
+que             1734
+por             1313
+del             1275
+se              1231
+fecha           1206
+es              1205
+s               1147
+otros           1084
+los             1039
+documentos      1038
+
+LEMMA Zipf: s ≈ 0.9409, R^2 ≈ 0.9291
+LEMMA Zipf-Mandelbrot: s ≈ 0.9409, q ≈ 0.0000, C ≈ 8783.3600, R^2 ≈ 0.9291
+LEMMA analyzed: tokens = 202868, unique words = 24178
+Top words (lemma):
+a               18605
+el              10272
+de              8121
+e               7418
+o               6087
+y               3432
+en              3299
+no              2922
+él              2429
+ser             2015
+que             1741
+c               1739
+por             1704
+fecha           1203
+otro            1198
+uno             1174
+s               1149
+documento       1039
+dar             971
+con             936
+
+=== LANGUAGE: lt ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.8834, R^2 ≈ 0.9500
+RAW Zipf-Mandelbrot: s ≈ 0.8840, q ≈ 0.6006, C ≈ 9112.4442, R^2 ≈ 0.9500
+RAW analyzed: tokens = 200000, unique words = 43882
+Top words (raw):
+ir              7057
+the             1573
+iš              1554
+yra             1530
+tai             1506
+kad             1447
+į               1255
+to              1085
+su              1064
+savo            1050
+o               1040
+of              1007
+jis             985
+kaip            944
+a               854
+ar              796
+gutenberg       768
+jo              738
+jei             690
+project         688
+
+LEMMA Zipf: s ≈ 1.0303, R^2 ≈ 0.9634
+LEMMA Zipf-Mandelbrot: s ≈ 1.0403, q ≈ 8.5586, C ≈ 30360.4409, R^2 ≈ 0.9639
+LEMMA analyzed: tokens = 195196, unique words = 28222
+Top words (lemma):
+ir              7053
+jis             5137
+tas             3529
+būti            3036
+aš              1820
+kuris           1719
+the             1572
+iš              1553
+kad             1445
+savęs           1277
+į               1253
+šis             1101
+su              1062
+o               1039
+of              1004
+žmogus          958
+tu              955
+kaip            943
+kas             863
+visas           809
+
+=== LANGUAGE: sl ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.9577, R^2 ≈ 0.9702
+RAW Zipf-Mandelbrot: s ≈ 0.9577, q ≈ 0.0000, C ≈ 13584.1325, R^2 ≈ 0.9702
+RAW analyzed: tokens = 200000, unique words = 26915
+Top words (raw):
+je              7168
+in              5374
+j               4471
+da              4061
+se              3507
+v               3196
+na              2309
+ne              2274
+bi              2009
+pa              1802
+i               1560
+sem             1394
+za              1328
+ni              1318
+bil             1228
+po              1223
+ko              1199
+to              1124
+s               1100
+ki              1070
+
+LEMMA Zipf: s ≈ 1.0002, R^2 ≈ 0.9679
+LEMMA Zipf-Mandelbrot: s ≈ 1.0002, q ≈ 0.0000, C ≈ 15741.4528, R^2 ≈ 0.9679
+LEMMA analyzed: tokens = 199715, unique words = 21232
+Top words (lemma):
+biti            18187
+in              5377
+on              5353
+se              4663
+j               4468
+da              4056
+v               3190
+ta              2795
+jaz             2759
+na              2304
+ne              2269
+z               2161
+ti              1933
+pa              1802
+i               1558
+za              1333
+po              1223
+ko              1198
+imeti           1177
+ali             1163
+
+=== LANGUAGE: et ===
+Text sources: Project Gutenberg, Internet Archive
+
+RAW Zipf: s ≈ 0.9432, R^2 ≈ 0.9492
+RAW Zipf-Mandelbrot: s ≈ 0.9451, q ≈ 1.7518, C ≈ 14629.1904, R^2 ≈ 0.9492
+RAW analyzed: tokens = 200000, unique words = 37107
+Top words (raw):
+ja              5782
+ei              3558
+ta              2449
+on              2051
+oli             1988
+kui             1833
+et              1787
+ka              1613
+see             1331
+oma             1133
+mis             1090
+ning            1073
+margus          965
+siis            956
+tema            914
+sa              851
+ära             773
+aga             745
+kes             717
+nagu            707
+
+LEMMA Zipf: s ≈ 1.1970, R^2 ≈ 0.9672
+LEMMA Zipf-Mandelbrot: s ≈ 1.2379, q ≈ 24.3744, C ≈ 109333.1976, R^2 ≈ 0.9696
+LEMMA analyzed: tokens = 179066, unique words = 15743
+Top words (lemma):
+olema           7335
+ja              5783
+tema            5535
+see             3943
+ei              3570
+mina            2561
+sina            2380
+kui             1832
+et              1784
+mis             1618
+ka              1612
+oma             1237
+tulema          1076
+ning            1072
+saama           1068
+kes             1026
+ise             1007
+margus          963
+siis            955
+minema          895
+
+=== LANGUAGE: lv ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.7596, R^2 ≈ 0.9096
+RAW Zipf-Mandelbrot: s ≈ 0.7596, q ≈ 0.0000, C ≈ 2876.8669, R^2 ≈ 0.9096
+RAW analyzed: tokens = 200000, unique words = 57150
+Top words (raw):
+un              4432
+a               2085
+i               1975
+ar              1535
+no              1364
+par             1278
+kā              1215
+ir              1125
+arī             1108
+ka              1099
+bet             952
+kas             893
+latviešu        865
+m               805
+tā              775
+v               772
+uz              765
+s               699
+c               674
+bija            661
+
+LEMMA Zipf: s ≈ 0.8648, R^2 ≈ 0.9123
+LEMMA Zipf-Mandelbrot: s ≈ 0.8648, q ≈ 0.0000, C ≈ 6635.5702, R^2 ≈ 0.9123
+LEMMA analyzed: tokens = 199783, unique words = 41903
+Top words (lemma):
+un              4429
+būt             3415
+a               2084
+i               1975
+kas             1622
+tas             1620
+ar              1534
+no              1363
+tā              1333
+par             1274
+kā              1226
+arī             1156
+ka              1097
+latvietis       971
+bet             950
+mēs             863
+m               806
+gads            790
+v               772
+uz              765
+
+=== LANGUAGE: sv ===
+Text sources: Internet Archive
+
+RAW Zipf: s ≈ 0.9297, R^2 ≈ 0.9547
+RAW Zipf-Mandelbrot: s ≈ 0.9297, q ≈ 0.0000, C ≈ 11360.4541, R^2 ≈ 0.9547
+RAW analyzed: tokens = 200000, unique words = 33300
+Top words (raw):
+i               6960
+och             6842
+en              4166
+som             3943
+att             3377
+det             2728
+den             2590
+med             2361
+är              2117
+för             1927
+på              1926
+till            1891
+de              1812
+av              1776
+ett             1590
+af              1351
+om              1322
+har             1039
+han             997
+men             883
+
+LEMMA Zipf: s ≈ 0.9894, R^2 ≈ 0.9577
+LEMMA Zipf-Mandelbrot: s ≈ 0.9895, q ≈ 0.0501, C ≈ 16800.5967, R^2 ≈ 0.9577
+LEMMA analyzed: tokens = 197379, unique words = 26832
+Top words (lemma):
+och             6799
+i               6713
+en              5770
+den             5465
+som             3939
+att             3373
+vara            3159
+med             2365
+de              2296
+på              1924
+för             1922
+till            1888
+sig             1867
+av              1775
+han             1700
+ha              1449
+af              1325
+om              1320
+jag             1099
+kunna           1068
