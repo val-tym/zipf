@@ -274,8 +274,8 @@ this            1534\n\
         en_raw_zipf_title_for_det_coef = styled_text("Закон Ципфа", font_size=24).shift(LEFT * 4 + UP)
         en_raw_zipf_mandelbrot_title_for_det_coef = styled_text("Закон Ципфа-Мандельброта", font_size=24).shift(RIGHT * 4 + UP)
 
-        en_raw_zipf_for_det_coef = MathTex(r"R^2 = 0.9810", font_size=25).shift(LEFT * 4 + DOWN)
-        en_raw_zipf_mandelbrot_for_det_coef = MathTex(r"R^2 = 0.9831", font_size=25).shift(RIGHT * 4 + DOWN)
+        en_raw_zipf_for_det_coef = MathTex(r"R^2 = 0.9803", font_size=25).shift(LEFT * 4 + DOWN)
+        en_raw_zipf_mandelbrot_for_det_coef = MathTex(r"R^2 = 0.9827", font_size=25).shift(RIGHT * 4 + DOWN)
 
 
         self.play(Write(en_raw_zipf_title_for_det_coef))
@@ -342,11 +342,11 @@ this            1534\n\
         en_zipf_title = styled_text("Закон Ципфа", font_size=24).shift(LEFT * 2 + UP * 3.7)
         en_zipf_mandelbrot_title = styled_text("Закон Ципфа-Мандельброта", font_size=24).shift(RIGHT * 4 + UP * 3.7)
 
-        en_raw_zipf = styled_text("0.9810", font_size=30).shift(2 * LEFT + UP * 1.7)
-        en_raw_zipf_mandelbrot = styled_text("0.9831", font_size=30).shift(4 * RIGHT + UP * 1.7)
+        en_raw_zipf = styled_text("0.9803", font_size=30).shift(2 * LEFT + UP * 1.7)
+        en_raw_zipf_mandelbrot = styled_text("0.9827", font_size=30).shift(4 * RIGHT + UP * 1.7)
 
-        en_lemma_zipf = styled_text("0.9802", font_size=30).shift(2 * LEFT + DOWN * 2.1)
-        en_lemma_zipf_mandelbrot = styled_text("0.9835", font_size=30).shift(4 * RIGHT + DOWN * 2.1)
+        en_lemma_zipf = styled_text("0.9784", font_size=30).shift(2 * LEFT + DOWN * 2.1)
+        en_lemma_zipf_mandelbrot = styled_text("0.9828", font_size=30).shift(4 * RIGHT + DOWN * 2.1)
 
         raw = styled_text("Без лематизації", font_size=20).shift(UP * 1.7).to_edge(LEFT)
         lemma = styled_text("З лематизацією", font_size=20).shift(DOWN * 2.1).to_edge(LEFT)
