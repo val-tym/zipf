@@ -168,10 +168,10 @@ class ZipfPresentation(VoiceoverScene):
         ws = with_card(ImageMobject(asset("wikisource.png")), pad=0.18).scale(0.35)
         ia = with_card(ImageMobject(asset("internet_archive.png")), pad=0.18).scale(0.37).to_edge(RIGHT)
 
-        with self.voiceover(
-                text="Для дослідження використаємо відкриті електронні бібліотеки: проект Гутенберг, Вікіджерела та Internet Archive. Це також дозволяє додати українські тексти."
-        ) as tracker:
-            self.play(FadeIn(pg,ws,ia))
+
+        self.play(FadeIn(pg,ws,ia))
+
+        self.wait(3.5)
 
         self.play(FadeOut(pg,ws,ia))
 
@@ -180,14 +180,14 @@ class ZipfPresentation(VoiceoverScene):
         book1 = with_card(ImageMobject(asset("book.png")).shift(DOWN).scale(0.5), pad=0.10)
 
         self.play(FadeIn(book1))
-        self.wait(13)
+        self.wait(16)
 
         # ================================================
 
         book2 = with_card(ImageMobject(asset("book.png")).shift(UP*1.5).scale(0.5), pad=0.10)
 
         self.play(FadeIn(book2))
-        self.wait(3.5)
+        self.wait(5)
 
         self.play(FadeOut(book1, book2))
 
@@ -229,7 +229,7 @@ this            1534\n\
         en_raw_zipf_mandelbrot = with_card(ImageMobject(result("en_raw_zipf_mandelbrot.png")).shift(4*RIGHT).scale(1.3), pad=0.18)
 
         self.play(FadeIn(en_raw_zipf_title, en_raw_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot))
-        self.wait(13)
+        self.wait(11)
 
         self.play(FadeOut(en_raw_zipf_title, en_raw_zipf_mandelbrot_title, en_raw_zipf, en_raw_zipf_mandelbrot))
 
